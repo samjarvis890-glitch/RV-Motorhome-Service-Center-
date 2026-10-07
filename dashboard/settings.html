@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Account Settings & Preferences — ROADREADY RV SERVICE</title>
+  <meta name="description" content="Customize your RoadReady RV service alerts, notification channels, display settings, and security credentials.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master & Dashboard Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#dashboard-main-content" class="skip-link">Skip to settings content</a>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="dashboard-layout">
+
+    <!-- ======================================================================
+         1. SIDEBAR (Persistent Desktop, Off-Canvas Drawer on Tablet & Mobile)
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard Sidebar Navigation">
+      
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-header">
+        <a href="../index.html" class="sidebar-brand-link" aria-label="RoadReady RV Service Homepage">
+          <img src="../assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-light-theme" width="170" height="32">
+          <img src="../assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-dark-theme" width="170" height="32">
+        </a>
+        <button type="button" class="sidebar-close-btn" aria-label="Close navigation sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sidebar Navigation Menu -->
+      <nav class="sidebar-nav-container">
+        <!-- Group: OVERVIEW -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Overview</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="index.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: MY RV -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">My RV</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="my-rv.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                  <span>My RV</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="rv-details.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                  <span>RV Details</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="documents.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                  <span>Documents</span>
+                </span>
+                <span class="sidebar-badge">4</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: SERVICE -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Service</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="service-requests.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  <span>Service Requests</span>
+                </span>
+                <span class="sidebar-badge badge-accent">2</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="appointments.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>Appointments</span>
+                </span>
+                <span class="sidebar-badge badge-success">Nov 18</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="maintenance-history.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Maintenance History</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: CARE -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Care</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="warranty.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Warranty Status</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="service-records.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                  <span>Service Records</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="messages.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Messages</span>
+                </span>
+                <span class="sidebar-badge badge-accent">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: ACCOUNT -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Account</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="profile.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Profile</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="settings.html" class="sidebar-nav-link active" aria-current="page">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                    <line x1="1" y1="14" x2="7" y2="14"></line>
+                    <line x1="9" y1="8" x2="15" y2="8"></line>
+                    <line x1="17" y1="16" x2="23" y2="16"></line>
+                  </svg>
+                  <span>Settings</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer / Bottom Actions -->
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-footer-link" aria-label="Return to main public website">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Website</span>
+        </a>
+        <button type="button" class="sidebar-footer-link link-logout" data-modal-target="logout-modal" style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         2. MAIN DASHBOARD WORKSPACE
+         ====================================================================== -->
+    <div class="dashboard-workspace">
+
+      <!-- Sticky Topbar -->
+      <header class="dashboard-topbar" role="banner">
+        <div class="topbar-left">
+          <button type="button" class="dashboard-drawer-toggle" aria-label="Open Navigation Sidebar" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-search-box">
+            <svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" class="topbar-search-input" placeholder="Search settings, notifications, security..." aria-label="Search settings">
+            <kbd class="topbar-search-shortcut">⌘K</kbd>
+            <div class="search-results-dropdown" role="region" aria-label="Search Results"></div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button type="button" class="topbar-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <button type="button" class="topbar-btn rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)" title="Toggle RTL / LTR">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <line x1="21" y1="16" x2="21" y2="21"></line>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </button>
+          <div class="topbar-menu-wrapper">
+            <button type="button" class="topbar-btn notification-toggle-btn" aria-label="View Service Notifications" aria-expanded="false">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span class="topbar-notification-badge" aria-label="1 unread notification"></span>
+            </button>
+            <div class="notification-dropdown-menu" role="menu">
+              <div class="notification-header">
+                <span class="notification-title">Notifications</span>
+                <span class="sidebar-badge badge-accent">1 New</span>
+              </div>
+              <div class="notification-list">
+                <a href="service-requests.html" class="notification-item">
+                  <span class="notification-dot"></span>
+                  <div>
+                    <div><strong>Bay Reserved:</strong> Work Order #RR-8842 scheduled for Nov 18 in Bay 4.</div>
+                    <div class="notification-meta">2 hours ago • Bay Operations</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="topbar-menu-wrapper">
+            <button type="button" class="profile-dropdown-trigger" aria-label="Open User Account Menu" aria-expanded="false">
+              <div class="profile-avatar" aria-hidden="true">RO</div>
+              <div class="profile-info">
+                <span class="profile-name">RV OWNER</span>
+                <span class="profile-sub">Verified Owner</span>
+              </div>
+              <svg class="profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="profile-dropdown-menu" role="menu">
+              <div class="profile-menu-header">
+                <div class="profile-menu-user">RV OWNER</div>
+                <div class="profile-menu-role">RoadReady Certified Portal</div>
+              </div>
+              <a href="profile.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>My Profile</span>
+              </a>
+              <a href="rv-details.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span>RV Specifications</span>
+              </a>
+              <a href="settings.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Settings</span>
+              </a>
+              <div style="height: 1px; background: var(--color-border); margin: 4px 0;"></div>
+              <button type="button" class="profile-menu-item menu-logout" data-modal-target="logout-modal" role="menuitem" style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Scrollable Content -->
+      <main class="dashboard-main-content" id="dashboard-main-content">
+
+        <!-- Page Header & Breadcrumbs -->
+        <div class="dashboard-page-header">
+          <div class="header-text-group">
+            <nav class="dashboard-breadcrumbs" aria-label="Breadcrumb">
+              <ol>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><span aria-hidden="true">/</span></li>
+                <li><span>Account</span></li>
+                <li><span aria-hidden="true">/</span></li>
+                <li aria-current="page">Settings</li>
+              </ol>
+            </nav>
+            <h1 class="dashboard-page-title">Account Settings & Preferences</h1>
+            <p class="dashboard-page-subtitle">Configure real-time bay status alerts, display theme options, security credentials, and data export.</p>
+          </div>
+        </div>
+
+        <!-- ======================================================================
+             SETTINGS PANELS
+             ====================================================================== -->
+        <div style="display: flex; flex-direction: column; gap: 28px; max-width: 900px;">
+
+          <!-- SECTION 1: BAY NOTIFICATIONS & SERVICE REMINDERS -->
+          <div class="settings-section-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding-bottom: 14px;">
+              <div>
+                <h2 class="setting-title" style="font-size: 1.15rem; margin: 0;">Service Bay & Maintenance Notifications</h2>
+                <p class="setting-desc" style="margin: 2px 0 0;">Control how RoadReady technicians contact you during active service work orders.</p>
+              </div>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Real-Time Bay Status SMS Alerts</span>
+                <span class="setting-desc">Receive instant text messages when your coach transitions between intake, inspection lift, and wash bays.</span>
+              </div>
+              <label class="switch-control" aria-label="Toggle SMS Bay Alerts">
+                <input type="checkbox" checked onchange="window.showDashboardToast('SMS Bay Alert preference saved');">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Estimate Approval Requests</span>
+                <span class="setting-desc">Instant notification whenever your Service Advisor uploads a recommended repair or parts replacement for approval.</span>
+              </div>
+              <label class="switch-control" aria-label="Toggle Estimate Approval Requests">
+                <input type="checkbox" checked onchange="window.showDashboardToast('Estimate Approval preference saved');">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Seasonal Preventive Maintenance Reminders</span>
+                <span class="setting-desc">Quarterly reminders for Dicor roof lap seal inspection, winterization / de-winterizing, and Aqua-Hot annual burner nozzle service.</span>
+              </div>
+              <label class="switch-control" aria-label="Toggle Seasonal Reminders">
+                <input type="checkbox" checked onchange="window.showDashboardToast('Seasonal reminder preference saved');">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Multi-Point Inspection PDF Email Delivery</span>
+                <span class="setting-desc">Automatically email the complete 50-point certified PDF inspection report, torque logs, and photos upon work order completion.</span>
+              </div>
+              <label class="switch-control" aria-label="Toggle PDF Report Delivery">
+                <input type="checkbox" checked onchange="window.showDashboardToast('PDF delivery preference saved');">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">RoadReady Rally & Clinic Announcements</span>
+                <span class="setting-desc">Invitations to regional RV owner technical rallies, chassis seminars, and seasonal discount clinics.</span>
+              </div>
+              <label class="switch-control" aria-label="Toggle Marketing Announcements">
+                <input type="checkbox" onchange="window.showDashboardToast('Rally announcement preference saved');">
+                <span class="switch-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- SECTION 2: DISPLAY, UNITS & LOCALIZATION -->
+          <div class="settings-section-card">
+            <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 14px;">
+              <h2 class="setting-title" style="font-size: 1.15rem; margin: 0;">Display, Units & Localization</h2>
+              <p class="setting-desc" style="margin: 2px 0 0;">Adjust dashboard presentation, measurement standards, and regional timezones.</p>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Measurement Units</span>
+                <span class="setting-desc">Tire pressure (PSI vs Bar), temperature (°F vs °C), liquid capacities (Gallons vs Liters), odometer (Miles vs Km).</span>
+              </div>
+              <select class="form-input" style="width: 220px;" onchange="window.showDashboardToast('Unit preferences updated');">
+                <option value="imperial" selected>Imperial (°F, PSI, Gal, Mi)</option>
+                <option value="metric">Metric (°C, Bar, L, Km)</option>
+              </select>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Time Zone</span>
+                <span class="setting-desc">Used for scheduling bay appointments and real-time technician logs.</span>
+              </div>
+              <select class="form-input" style="width: 220px;" onchange="window.showDashboardToast('Time zone preference saved');">
+                <option value="mst" selected>America/Phoenix (MST)</option>
+                <option value="pst">America/Los_Angeles (PST)</option>
+                <option value="cst">America/Chicago (CST)</option>
+                <option value="est">America/New_York (EST)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- SECTION 3: ACCOUNT SECURITY & AUTHENTICATION -->
+          <div class="settings-section-card">
+            <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 14px;">
+              <h2 class="setting-title" style="font-size: 1.15rem; margin: 0;">Security & Authentication</h2>
+              <p class="setting-desc" style="margin: 2px 0 0;">Manage your password, multi-factor authentication, and authorized devices.</p>
+            </div>
+
+            <!-- Password Form -->
+            <form onsubmit="event.preventDefault(); window.showDashboardToast('Password updated successfully!'); this.reset();" style="display: flex; flex-direction: column; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--color-border-subtle);">
+              <div class="form-group">
+                <label class="form-label" for="curr-pw">Current Password</label>
+                <input type="password" id="curr-pw" class="form-input" placeholder="••••••••••••" required>
+              </div>
+
+              <div class="form-grid-2col">
+                <div class="form-group">
+                  <label class="form-label" for="new-pw">New Password</label>
+                  <input type="password" id="new-pw" class="form-input" placeholder="Min. 8 characters" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="conf-pw">Confirm New Password</label>
+                  <input type="password" id="conf-pw" class="form-input" placeholder="Confirm new password" required>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end;">
+                <button type="submit" class="btn btn-outline">Update Password</button>
+              </div>
+            </form>
+
+            <!-- 2FA Status -->
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="setting-title">Two-Factor Authentication (2FA)</span>
+                  <span class="badge badge-success" style="font-size: 0.7rem;">Active</span>
+                </div>
+                <span class="setting-desc">SMS verification codes are sent to your verified mobile number (+1 480-555-0192) on new sign-ins.</span>
+              </div>
+              <button type="button" class="btn btn-outline" style="font-size: 0.8rem; padding: 6px 14px;" onclick="window.showDashboardToast('2FA settings dialog opened');">
+                Manage 2FA
+              </button>
+            </div>
+
+            <!-- Active Sessions -->
+            <div style="margin-top: 10px;">
+              <span class="setting-title" style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Authorized Active Sessions</span>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); border: 1px solid var(--color-border);">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary);">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <div>
+                      <div style="font-weight: 600; font-size: 0.85rem; color: var(--color-text-main);">Chrome on Desktop (Windows) — <strong style="color: var(--color-success);">Current Session</strong></div>
+                      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">IP: 198.51.100.42 &bull; Phoenix, Arizona</div>
+                    </div>
+                  </div>
+                  <span class="badge badge-success" style="font-size: 0.7rem;">Active Now</span>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); border: 1px solid var(--color-border);">
+                  <div style="display: flex; align-items: center; gap: 12px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-text-muted);">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <div>
+                      <div style="font-weight: 600; font-size: 0.85rem; color: var(--color-text-main);">RoadReady Mobile App (iPhone 15 Pro)</div>
+                      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">Scottsdale, AZ &bull; Last active 2 hours ago</div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-outline" style="font-size: 0.75rem; padding: 4px 10px;" onclick="this.parentElement.remove(); window.showDashboardToast('Session revoked');">Revoke</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SECTION 4: DATA EXPORT & DANGER ZONE -->
+          <div class="settings-section-card" style="border-color: rgba(185, 74, 72, 0.3);">
+            <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 14px;">
+              <h2 class="setting-title" style="font-size: 1.15rem; margin: 0; color: var(--color-danger);">Data Export & Account Management</h2>
+              <p class="setting-desc" style="margin: 2px 0 0;">Download complete records or request portal deactivation.</p>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title">Export RV Maintenance & Telemetry Data</span>
+                <span class="setting-desc">Download an archive of all past work orders, inspection checklists, torque logs, and warranty claim records in JSON/CSV format.</span>
+              </div>
+              <button type="button" class="btn btn-outline" style="font-size: 0.82rem; gap: 6px;" onclick="window.showDashboardToast('Export archive generated and downloaded!');">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Archive</span>
+              </button>
+            </div>
+
+            <div class="setting-row-item">
+              <div class="setting-info">
+                <span class="setting-title" style="color: var(--color-danger);">Deactivate Owner Portal Access</span>
+                <span class="setting-desc">Disable online access for this account. Service history remains securely archived at RoadReady certified centers.</span>
+              </div>
+              <button type="button" class="btn btn-danger" style="font-size: 0.82rem;" onclick="if(confirm('Are you sure you wish to request owner portal deactivation?')) window.showDashboardToast('Deactivation request logged with service management.');">
+                Deactivate Access
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <!-- ======================================================================
+       MODAL: LOGOUT CONFIRMATION
+       ====================================================================== -->
+  <div class="modal-dialog-backdrop" id="logout-modal" aria-hidden="true">
+    <div class="modal-dialog-card modal-compact" role="dialog" aria-labelledby="logout-title" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title" id="logout-title">Confirm Logout</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body-text">
+        Are you sure you want to log out of your RoadReady RV Owner portal? You will need your credentials to access your live coach telemetry and service history.
+      </div>
+      <div class="modal-actions-footer">
+        <button type="button" class="btn btn-outline" data-modal-close>Stay Logged In</button>
+        <a href="../login.html" class="btn btn-danger">Log Out</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard JavaScript -->
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

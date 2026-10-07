@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>ROADREADY RV SERVICE — About Our Brand &amp; Approach</title>
+  <meta name="description" content="Discover the philosophy, technical approach, and owner-centered care behind RoadReady RV Service. Keeping your coach prepared for every mile ahead.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       GLOBAL MASTER NAVBAR
+       Exact global component shared across the entire website
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-container">
+      <nav class="navbar-wrapper" aria-label="Main Navigation">
+        
+        <!-- Brand Logo (Light / Dark Adaptive) -->
+        <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service - Return to homepage">
+          <img src="assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="brand-logo-img logo-light-theme" width="240" height="40">
+          <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="brand-logo-img logo-dark-theme" width="240" height="40">
+        </a>
+
+        <!-- Desktop Navigation Items (1281px+) -->
+        <ul class="navbar-nav-desktop" role="menubar">
+          
+          <!-- Home Dropdown -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home Pages">
+              <a href="index.html" class="nav-dropdown-link" role="menuitem">Home 1</a>
+              <a href="home2.html" class="nav-dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <!-- Services: DIRECT LINK -->
+          <li class="nav-item" role="none">
+            <a href="services.html" class="nav-link" role="menuitem">Services</a>
+          </li>
+
+          <!-- About: DIRECT LINK, ACTIVE ON THIS PAGE -->
+          <li class="nav-item" role="none">
+            <a href="about.html" class="nav-link active" role="menuitem" aria-current="page">About</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="service-areas.html" class="nav-link" role="menuitem">Service Areas</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+
+          <!-- Owner Portal Dropdown (Strictly 2 items: User Dashboard & Admin Dashboard) -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Owner Portal</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Owner Portal Submenu">
+              <a href="dashboard/index.html" class="nav-dropdown-link" role="menuitem">User Dashboard</a>
+              <a href="admin-dashboard/index.html" class="nav-dropdown-link" role="menuitem">Admin Dashboard</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Navbar Controls & Mobile Triggers -->
+        <div class="navbar-controls">
+          <!-- Dark Mode Toggle Button -->
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- RTL / LTR Toggle Button -->
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle Text Direction" title="Toggle RTL / LTR">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+            </svg>
+          </button>
+
+          <!-- Desktop Login Button -->
+          <a href="login.html" class="btn btn-forest btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>LOGIN</span>
+          </a>
+
+          <!-- Hamburger Button (Visible on <=1280px Tablet & Mobile) -->
+          <button type="button" class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE & TABLET DRAWER NAVIGATION
+       Contains ALL navigation links with smooth nested accordions
+       ====================================================================== -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service">
+        <img src="assets/images/brand/roadready-mark.svg" alt="RoadReady Mark" width="34" height="34">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-primary); letter-spacing: 0.05em;">ROADREADY</span>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <nav class="drawer-nav-list" aria-label="Mobile Menu Links">
+        
+        <!-- Home Collapsible Submenu -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn" data-submenu-target="drawer-home-sub" aria-expanded="false">
+            <span>Home</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu" id="drawer-home-sub">
+            <a href="index.html" class="drawer-submenu-link">Home 1</a>
+            <a href="home2.html" class="drawer-submenu-link">Home 2</a>
+          </div>
+        </div>
+
+        <a href="services.html" class="drawer-nav-link">Services</a>
+        
+        <!-- About (Active on this page) -->
+        <a href="about.html" class="drawer-nav-link active" aria-current="page">About</a>
+        
+        <a href="service-areas.html" class="drawer-nav-link">Service Areas</a>
+        <a href="blog.html" class="drawer-nav-link">Blog</a>
+        <a href="contact.html" class="drawer-nav-link">Contact</a>
+        
+        <!-- Owner Portal Collapsible Submenu (Strictly 2 items) -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn" data-submenu-target="drawer-portal-sub" aria-expanded="false">
+            <span>Owner Portal</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu" id="drawer-portal-sub">
+            <a href="dashboard/index.html" class="drawer-submenu-link">User Dashboard</a>
+            <a href="admin-dashboard/index.html" class="drawer-submenu-link">Admin Dashboard</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="drawer-divider"></div>
+
+      <!-- Drawer Login CTA -->
+      <a href="login.html" class="btn btn-forest drawer-login-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>LOGIN</span>
+      </a>
+
+      <!-- Theme and RTL Controls inside drawer -->
+      <div class="drawer-controls-row">
+        <button type="button" class="drawer-control-item theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <span class="theme-label-text">Dark Mode</span>
+        </button>
+
+        <button type="button" class="drawer-control-item rtl-toggle-btn" aria-label="Toggle RTL / LTR">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+          </svg>
+          <span class="rtl-label-text">RTL / LTR</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MAIN CONTENT: EXACTLY 6 UNIQUE ABOUT SECTIONS
+       ====================================================================== -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION 1 — BRAND INTRODUCTION (EDITORIAL HERO)
+         Purpose: Introduce what ROADREADY stands for
+         ==================================================================== -->
+    <section class="site-section about-hero-section" id="brand-intro" aria-labelledby="about-hero-heading">
+      <div class="site-container">
+        
+        <!-- Top Split Grid -->
+        <div class="about-hero-top-grid">
+          
+          <div class="about-hero-main-content">
+            <div class="about-hero-label">ABOUT ROADREADY</div>
+            <h1 class="about-hero-title" id="about-hero-heading">
+              CARE THAT UNDERSTANDS THE ROAD.
+            </h1>
+            <p class="about-hero-lead">
+              An RV is more than a vehicle. It is the space between destinations, the place where journeys begin and the systems that have to work when the road stretches ahead.
+            </p>
+            <p class="about-hero-subtext">
+              ROADREADY is built around practical RV care — helping owners understand, prepare and maintain the systems that support the journey.
+            </p>
+          </div>
+
+          <!-- Vertical Focus Sidebar -->
+          <div class="about-hero-sidebar" aria-label="Core Brand Tenets">
+            
+            <div class="about-focus-item">
+              <span class="about-focus-num">01</span>
+              <div class="about-focus-body">
+                <h2 class="about-focus-title">THE LIVING VEHICLE</h2>
+                <p class="about-focus-desc">Balancing road mechanics with self-contained living systems.</p>
+              </div>
+            </div>
+
+            <div class="about-focus-item">
+              <span class="about-focus-num">02</span>
+              <div class="about-focus-body">
+                <h2 class="about-focus-title">SYSTEMIC CARE</h2>
+                <p class="about-focus-desc">Treating power, water, climate and chassis as one interconnected ecosystem.</p>
+              </div>
+            </div>
+
+            <div class="about-focus-item">
+              <span class="about-focus-num">03</span>
+              <div class="about-focus-body">
+                <h2 class="about-focus-title">TRANSPARENT RECORDS</h2>
+                <p class="about-focus-desc">Documenting every check for long-term ownership clarity and confidence.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Wide Photographic Banner -->
+        <div class="about-hero-image-wrap">
+          <img src="assets/images/about/about-hero.jpg" alt="Pristine motorhome staged in early morning natural light outside dedicated service facility" class="about-hero-img" width="1200" height="514" loading="eager">
+          <div class="about-hero-img-badge">
+            <span>ROADREADY RV SERVICE — DEDICATED COACH CARE</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2 — OUR VIEW OF RV CARE (TYPOGRAPHIC PHILOSOPHY)
+         Purpose: Explain the brand philosophy
+         ==================================================================== -->
+    <section class="site-section about-philosophy-section" id="philosophy" aria-labelledby="philosophy-heading">
+      <div class="site-container">
+        
+        <div class="about-philosophy-header">
+          <div class="eyebrow">OUR PHILOSOPHY</div>
+          <h2 id="philosophy-heading">AN RV IS A SYSTEM OF SMALL DETAILS.</h2>
+          <p>
+            When you travel, every onboard system plays a role. Good stewardship is not about sudden emergency fixes — it is about the steady, quiet practice of knowing how each component supports the miles ahead.
+          </p>
+        </div>
+
+        <div class="about-principles-list" role="list">
+          
+          <!-- Principle 01 -->
+          <div class="about-principle-row" role="listitem">
+            <span class="about-principle-index">01</span>
+            <h3 class="about-principle-title">UNDERSTAND THE VEHICLE.</h3>
+            <p class="about-principle-desc">
+              Good care starts with knowing how the important systems work together. Power conversion, chassis load, water circulation and structural sealing rely on mutual balance.
+            </p>
+          </div>
+
+          <!-- Principle 02 -->
+          <div class="about-principle-row" role="listitem">
+            <span class="about-principle-index">02</span>
+            <h3 class="about-principle-title">LOOK BEYOND THE OBVIOUS.</h3>
+            <p class="about-principle-desc">
+              Small signs can matter before they become larger problems. A subtle pressure drop, hairline seal shrinkage, or inverter harmonic can reveal what needs attention before a route begins.
+            </p>
+          </div>
+
+          <!-- Principle 03 -->
+          <div class="about-principle-row" role="listitem">
+            <span class="about-principle-index">03</span>
+            <h3 class="about-principle-title">PREPARE FOR THE JOURNEY.</h3>
+            <p class="about-principle-desc">
+              Maintenance is not only about today. It is about the miles ahead. Every verification is intended to give you peace of mind whether crossing mountain passes or settling into an off-grid camp.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3 — WHAT WE PAY ATTENTION TO (TECHNICAL INSPECTION TABLE)
+         Purpose: Show the breadth of thinking without simply listing services
+         ==================================================================== -->
+    <section class="site-section about-attention-section" id="attention-areas" aria-labelledby="attention-heading">
+      <div class="site-container">
+        
+        <div class="about-attention-header">
+          <div class="eyebrow">TECHNICAL DISCIPLINE</div>
+          <h2 id="attention-heading">LOOK CLOSER.</h2>
+          <p>
+            RV systems operate under continuous highway vibration, climate swings, and self-contained living demands. Here is what we pay attention to.
+          </p>
+        </div>
+
+        <div class="about-inspection-grid">
+          
+          <!-- Cell 1: POWER -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">POWER</span>
+            <h3 class="about-inspection-title">ELECTRICAL SYSTEMS</h3>
+            <p class="about-inspection-desc">
+              Electrical systems need to be understood before the road puts them under pressure. Shore power transfer switches, 12V distribution, and grounding continuity.
+            </p>
+          </div>
+
+          <!-- Cell 2: ENERGY -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">ENERGY</span>
+            <h3 class="about-inspection-title">BATTERY BANKS &amp; INVERTERS</h3>
+            <p class="about-inspection-desc">
+              Onboard battery banks, solar charge controllers, and pure sine power conversion demand steady conductance and state-of-charge testing.
+            </p>
+          </div>
+
+          <!-- Cell 3: WATER -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">WATER</span>
+            <h3 class="about-inspection-title">PLUMBING &amp; HOLDING</h3>
+            <p class="about-inspection-desc">
+              Plumbing and water systems deserve attention before a small issue becomes inconvenient. PEX fittings, city water regulators, and tank gate valves.
+            </p>
+          </div>
+
+          <!-- Cell 4: CLIMATE -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">CLIMATE</span>
+            <h3 class="about-inspection-title">HVAC &amp; THERMAL AIRFLOW</h3>
+            <p class="about-inspection-desc">
+              Heating and cooling systems matter when the RV becomes your living space. Rooftop A/C temperature differential and propane furnace heat exchangers.
+            </p>
+          </div>
+
+          <!-- Cell 5: STRUCTURE -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">STRUCTURE</span>
+            <h3 class="about-inspection-title">ROOF SEALS &amp; SLIDES</h3>
+            <p class="about-inspection-desc">
+              Roof condition, Dicor lap seal elasticity, slide-out wipers, and window perimeter beads keep highway weather elements strictly outside.
+            </p>
+          </div>
+
+          <!-- Cell 6: COMFORT -->
+          <div class="about-inspection-cell">
+            <span class="about-inspection-marker">COMFORT</span>
+            <h3 class="about-inspection-title">LIVING APPLIANCES</h3>
+            <p class="about-inspection-desc">
+              Absorption refrigeration cycles, cooktop gas pressures, and water heater safety valves make extended journeys feel effortless.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4 — THE ROADREADY APPROACH (JOURNEY LINE ROUTE)
+         Purpose: Explain the service philosophy
+         ==================================================================== -->
+    <section class="site-section about-approach-section" id="approach" aria-labelledby="approach-heading">
+      <div class="site-container">
+        
+        <div class="about-approach-header">
+          <div class="eyebrow">SERVICE PHILOSOPHY</div>
+          <h2 id="approach-heading">LESS GUESSWORK. MORE CLARITY.</h2>
+          <p>
+            A thoughtful service experience built on listening carefully, assessing accurately, and leaving every owner with understandable documentation.
+          </p>
+        </div>
+
+        <div class="about-approach-track">
+          
+          <!-- Step 01 -->
+          <div class="about-approach-step">
+            <div class="about-step-node">01</div>
+            <div class="about-step-content">
+              <span class="about-step-tag">INTAKE</span>
+              <h3 class="about-step-title">LISTEN</h3>
+              <p class="about-step-desc">
+                Start with what the owner has noticed and what the RV needs to do next. Route expectations, recent weather exposure, and specific symptoms.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="about-approach-step">
+            <div class="about-step-node">02</div>
+            <div class="about-step-content">
+              <span class="about-step-tag">EVALUATION</span>
+              <h3 class="about-step-title">UNDERSTAND</h3>
+              <p class="about-step-desc">
+                Consider the relevant systems and the context around the issue. We review how electrical, mechanical, and living subsystems interact.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="about-approach-step">
+            <div class="about-step-node">03</div>
+            <div class="about-step-content">
+              <span class="about-step-tag">EXECUTION</span>
+              <h3 class="about-step-title">WORK THROUGH THE DETAILS</h3>
+              <p class="about-step-desc">
+                Focus on the appropriate inspection or service scope using OEM-specified materials, calibrated diagnostic tools, and dedicated service bays.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="about-approach-step">
+            <div class="about-step-node">04</div>
+            <div class="about-step-content">
+              <span class="about-step-tag">DOCUMENTATION</span>
+              <h3 class="about-step-title">LEAVE A CLEARER RECORD</h3>
+              <p class="about-step-desc">
+                Useful information should remain understandable after the visit. Full digital logs and notes are stored in your Owner Portal for future reference.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5 — BUILT AROUND THE OWNER (SPLIT EDITORIAL LAYOUT)
+         Purpose: Connect company philosophy with owner experience
+         ==================================================================== -->
+    <section class="site-section about-owner-section" id="owner-experience" aria-labelledby="owner-heading">
+      <div class="site-container">
+        
+        <div class="about-owner-grid">
+          
+          <!-- Owner Visual Frame -->
+          <div class="about-owner-visual">
+            <div class="about-owner-img-frame">
+              <img src="assets/images/about/owner-experience.jpg" alt="RV owner reviewing coach digital maintenance history and inspection log on digital device" class="about-owner-img" width="600" height="450" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Owner Content & Blocks -->
+          <div class="about-owner-content">
+            
+            <div class="about-owner-header">
+              <div class="eyebrow">OWNER-CENTERED CARE</div>
+              <h2 id="owner-heading">GOOD RV CARE SHOULD FEEL EASIER TO UNDERSTAND.</h2>
+              <p>
+                We believe owners travel with greater peace of mind when they know the condition of their vehicle and have transparent service history at their fingertips.
+              </p>
+            </div>
+
+            <div class="about-owner-blocks">
+              
+              <div class="about-owner-block">
+                <h3 class="about-owner-block-title">SEE WHAT MATTERS</h3>
+                <p class="about-owner-block-desc">
+                  Understand the systems that affect the journey with clear diagnostic summaries rather than confusing technical jargon.
+                </p>
+              </div>
+
+              <div class="about-owner-block">
+                <h3 class="about-owner-block-title">KEEP THE DETAILS TOGETHER</h3>
+                <p class="about-owner-block-desc">
+                  Use the Owner Portal to keep service information, appointment schedules, and component records organized in one place.
+                </p>
+              </div>
+
+              <div class="about-owner-block">
+                <h3 class="about-owner-block-title">PREPARE WITH CONFIDENCE</h3>
+                <p class="about-owner-block-desc">
+                  Know what has been checked before heading out, ensuring that minor concerns never become road-day interruptions.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="about-owner-actions">
+              <a href="dashboard/index.html" class="btn btn-primary">
+                <span>EXPLORE OWNER PORTAL</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6 — BRAND CLOSING (EMOTIONAL STATEMENT & VISUAL BANNER)
+         Purpose: End with a strong emotional statement
+         ==================================================================== -->
+    <section class="site-section about-closing-section" id="closing-statement" aria-labelledby="closing-heading">
+      <div class="site-container">
+        
+        <div class="about-closing-banner">
+          <img src="assets/images/about/about-closing.jpg" alt="Premium motorhome departing a modern service facility at golden hour evening light" class="about-closing-bg-img" width="1200" height="500" loading="lazy">
+          
+          <div class="about-closing-overlay">
+            <div class="eyebrow">THE ROADREADY COMMITMENT</div>
+            <h2 class="about-closing-title" id="closing-heading">THE ROAD IS THE REASON.<br>THE DETAILS GET YOU THERE.</h2>
+            <p class="about-closing-desc">
+              From the first inspection to the next departure, good RV care is about making the important details easier to understand and easier to manage.
+            </p>
+
+            <div class="about-closing-actions">
+              <a href="services.html" class="btn btn-primary">
+                <span>EXPLORE OUR SERVICES</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+
+              <a href="contact.html#service-request" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="12" y1="18" x2="12" y2="12"></line>
+                  <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+                <span>START A SERVICE REQUEST</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       GLOBAL MASTER FOOTER
+       Exact global component shared across the entire website
+       ====================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-container">
+      
+      <div class="footer-main-grid">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-brand-logo-link" aria-label="RoadReady RV Service">
+            <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="footer-brand-logo" width="220" height="38">
+          </a>
+          <div class="footer-tagline">KEEP THE JOURNEY MOVING.</div>
+          <p class="footer-desc">
+            Specialist care for motorhomes and towables. Dedicated bays for drivetrain, electrical banks, plumbing, HVAC, and weatherproofing.
+          </p>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">SERVICES</h3>
+          <ul class="footer-links-list">
+            <li><a href="maintenance.html" class="footer-link">RV Maintenance</a></li>
+            <li><a href="winterization.html" class="footer-link">Winterization</a></li>
+            <li><a href="electrical-plumbing.html" class="footer-link">Electrical &amp; Plumbing</a></li>
+            <li><a href="hvac-appliances.html" class="footer-link">HVAC &amp; Appliances</a></li>
+            <li><a href="roof-exterior.html" class="footer-link">Roof &amp; Exterior</a></li>
+            <li><a href="pre-trip-inspection.html" class="footer-link">Pre-Trip Inspection</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Owner Portal -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">OWNER PORTAL</h3>
+          <ul class="footer-links-list">
+            <li><a href="dashboard/index.html" class="footer-link">Owner Dashboard</a></li>
+            <li><a href="dashboard/index.html#appointments" class="footer-link">Service Appointments</a></li>
+            <li><a href="dashboard/index.html#history" class="footer-link">Maintenance History</a></li>
+            <li><a href="dashboard/index.html#warranty" class="footer-link">Warranty Status</a></li>
+            <li><a href="dashboard/index.html#messages" class="footer-link">Messages</a></li>
+            <li><a href="dashboard/profile.html" class="footer-link">Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">COMPANY</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="service-areas.html" class="footer-link">Service Areas</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="contact.html#service-request" class="footer-link">Service Request</a></li>
+            <li><a href="dashboard/index.html" class="footer-link">Owner Portal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar (Only Copyright, No Duplicate Theme/RTL Controls) -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          © 2026 ROADREADY RV SERVICE. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL: PLAN YOUR SERVICE
+       ====================================================================== -->
+  <div class="modal-backdrop" id="service-planner-modal" role="dialog" aria-modal="true" aria-labelledby="planner-modal-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="planner-modal-title">Plan Your RV Service</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="service-planner-form">
+          <div class="form-group">
+            <label for="coach-type" class="form-label">RV / Motorhome Type</label>
+            <select id="coach-type" class="form-select" required>
+              <option value="">Select coach type...</option>
+              <option value="class-a">Class A Motorhome (Diesel / Gas)</option>
+              <option value="class-b">Class B / Camper Van</option>
+              <option value="class-c">Class C Motorhome</option>
+              <option value="fifth-wheel">Fifth Wheel Trailer</option>
+              <option value="travel-trailer">Travel Trailer</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-category" class="form-label">Primary Service Required</label>
+            <select id="service-category" class="form-select" required>
+              <option value="">Select service...</option>
+              <option value="rv-maintenance">Chassis &amp; Powertrain Care</option>
+              <option value="winterization">Seasonal Winterization / De-Winterization</option>
+              <option value="electrical-plumbing">Electrical Banks &amp; Plumbing Leak Test</option>
+              <option value="hvac-appliances">A/C, Furnace &amp; Refrigerator Service</option>
+              <option value="roof-exterior">Roof Dicor Lap Seal Inspection</option>
+              <option value="pre-trip">Pre-Trip Safety &amp; System Staging</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-timeline" class="form-label">Preferred Timeframe</label>
+            <select id="preferred-timeline" class="form-select" required>
+              <option value="immediate">Immediate / Departure within 48h</option>
+              <option value="next-week">Next Week</option>
+              <option value="seasonal">Seasonal Storage / Winter Prep</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-notes" class="form-label">Notes on Vehicle Symptoms or Needs</label>
+            <textarea id="service-notes" class="form-textarea" placeholder="e.g. A/C cooling delta low, roof inspection before mountain trip..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <span>SUBMIT SERVICE REQUEST</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

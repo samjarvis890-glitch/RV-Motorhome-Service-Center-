@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>My RV — ROADREADY RV SERVICE | Coach Profile</title>
+  <meta name="description" content="View and manage your registered RV profile, primary coach specifications, tow vehicle telemetry, and fleet details.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master & Dashboard Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- Accessibility Skip Link -->
+  <a href="#dashboard-main-content" class="skip-link">Skip to coach profile content</a>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="dashboard-layout">
+
+    <!-- ======================================================================
+         1. SIDEBAR (Persistent Desktop, Off-Canvas Drawer on Tablet & Mobile)
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard Sidebar Navigation">
+      
+      <!-- Sidebar Brand Header -->
+      <div class="sidebar-brand-header">
+        <a href="../index.html" class="sidebar-brand-link" aria-label="RoadReady RV Service Homepage">
+          <img src="../assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-light-theme" width="170" height="32">
+          <img src="../assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-dark-theme" width="170" height="32">
+        </a>
+        <button type="button" class="sidebar-close-btn" aria-label="Close navigation sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sidebar Navigation Menu -->
+      <nav class="sidebar-nav-container">
+        
+        <!-- Group: OVERVIEW -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Overview</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="index.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: MY RV -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">My RV</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="my-rv.html" class="sidebar-nav-link active" aria-current="page">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                  <span>My RV</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="rv-details.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                  <span>RV Details</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="documents.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  <span>Documents</span>
+                </span>
+                <span class="sidebar-badge">4</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: SERVICE -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Service</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="service-requests.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  <span>Service Requests</span>
+                </span>
+                <span class="sidebar-badge badge-accent">2</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="appointments.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>Appointments</span>
+                </span>
+                <span class="sidebar-badge badge-success">Nov 18</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="maintenance-history.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>Maintenance History</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: CARE -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Care</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="warranty.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Warranty Status</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="service-records.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                  </svg>
+                  <span>Service Records</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="messages.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Messages</span>
+                </span>
+                <span class="sidebar-badge badge-accent">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group: ACCOUNT -->
+        <div class="sidebar-nav-group">
+          <div class="sidebar-group-title">Account</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="profile.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Profile</span>
+                </span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="settings.html" class="sidebar-nav-link">
+                <span class="sidebar-link-content">
+                  <svg class="sidebar-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                    <line x1="1" y1="14" x2="7" y2="14"></line>
+                    <line x1="9" y1="8" x2="15" y2="8"></line>
+                    <line x1="17" y1="16" x2="23" y2="16"></line>
+                  </svg>
+                  <span>Settings</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <!-- Sidebar Bottom Actions -->
+      <div class="sidebar-footer">
+        <a href="../index.html" class="sidebar-footer-link" aria-label="Return to main public website">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Website</span>
+        </a>
+        <button type="button" class="sidebar-footer-link link-logout" data-modal-target="logout-modal" style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         2. MAIN DASHBOARD WORKSPACE
+         ====================================================================== -->
+    <div class="dashboard-workspace">
+
+      <!-- Sticky Top Dashboard Bar -->
+      <header class="dashboard-topbar" role="banner">
+        <div class="topbar-left">
+          <button type="button" class="dashboard-drawer-toggle" aria-label="Open Navigation Sidebar" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="topbar-search-box">
+            <svg class="topbar-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" class="topbar-search-input" placeholder="Search your RV, service records..." aria-label="Search your RV, service records and work orders">
+            <kbd class="topbar-search-shortcut">⌘K</kbd>
+            <div class="search-results-dropdown" role="region" aria-label="Search Results"></div>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="topbar-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button type="button" class="topbar-btn rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)" title="Toggle RTL / LTR">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </button>
+
+          <!-- Notifications Dropdown Wrapper -->
+          <div class="topbar-menu-wrapper">
+            <button type="button" class="topbar-btn notification-toggle-btn" aria-label="View Service Notifications" aria-expanded="false">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span class="topbar-notification-badge" aria-label="1 unread notification"></span>
+            </button>
+
+            <div class="notification-dropdown-menu" role="menu">
+              <div class="notification-header">
+                <span class="notification-title">Notifications</span>
+                <span class="sidebar-badge badge-accent">1 New</span>
+              </div>
+              <div class="notification-list">
+                <a href="service-requests.html" class="notification-item">
+                  <span class="notification-dot"></span>
+                  <div>
+                    <div><strong>Bay Reserved:</strong> Work Order #RR-8842 scheduled for Nov 18 in Bay 4.</div>
+                    <div class="notification-meta">2 hours ago • Bay Operations</div>
+                  </div>
+                </a>
+                <a href="service-records.html" class="notification-item">
+                  <div>
+                    <div><strong>Service Certified:</strong> Generator 100-Hr inspection documentation uploaded.</div>
+                    <div class="notification-meta">Oct 14, 2024 • Work Order #WO-9921</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Profile Dropdown -->
+          <div class="topbar-menu-wrapper">
+            <button type="button" class="profile-dropdown-trigger" aria-label="Open User Account Menu" aria-expanded="false">
+              <div class="profile-avatar" aria-hidden="true">RO</div>
+              <div class="profile-info">
+                <span class="profile-name">RV OWNER</span>
+                <span class="profile-sub">Verified Owner</span>
+              </div>
+              <svg class="profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="profile-dropdown-menu" role="menu">
+              <div class="profile-menu-header">
+                <div class="profile-menu-user">RV OWNER</div>
+                <div class="profile-menu-role">RoadReady Certified Portal</div>
+              </div>
+              <a href="profile.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>My Profile</span>
+              </a>
+              <a href="rv-details.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                <span>RV Specifications</span>
+              </a>
+              <a href="settings.html" class="profile-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>Settings</span>
+              </a>
+              <div style="height: 1px; background: var(--color-border); margin: 4px 0;"></div>
+              <button type="button" class="profile-menu-item menu-logout" data-modal-target="logout-modal" role="menuitem" style="background: none; border: none; width: 100%; text-align: left; cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ==================================================================
+           MAIN CONTENT: MY RV PROFILE & VEHICLE MANAGEMENT
+           ================================================================== -->
+      <main class="dashboard-main-content" id="dashboard-main-content">
+        
+        <!-- Unique Page Header -->
+        <div class="dashboard-page-header">
+          <div class="page-header-title-group">
+            <span class="page-pretitle">Coach Profiles & Fleet</span>
+            <h1 class="page-main-title">YOUR RV.</h1>
+            <p class="page-subtitle">
+              Manage your registered motorhomes, travel trailers, and tow setups. Keep track of registration, chassis details, and readiness status.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button type="button" class="btn btn-secondary" data-modal-target="rv-edit-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+              <span>Edit RV Profile</span>
+            </button>
+            <button type="button" class="btn btn-forest" data-modal-target="add-rv-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>Add Coach / Trailer</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Primary RV Identity Showcase Panel -->
+        <section class="rv-hero-card" aria-label="Primary RV Identity">
+          <div class="rv-hero-media">
+            <img src="../assets/images/home/road-ready-rv.jpg" alt="2024 Grand Tourer Elite Class A Motorhome" class="rv-hero-img">
+            <div class="rv-hero-badge-overlay">
+              <span class="sidebar-badge badge-accent">PRIMARY COACH</span>
+              <span class="rv-status-badge">
+                <span class="rv-status-dot"></span>
+                <span>Active • Road Ready</span>
+              </span>
+            </div>
+          </div>
+          <div class="rv-hero-content">
+            <div class="rv-hero-header">
+              <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase;">
+                Coach Profile #01
+              </div>
+              <h2 class="rv-hero-name" id="display-rv-name">2024 Grand Tourer Elite</h2>
+              <div style="font-size: 0.9rem; color: var(--color-text-muted);">
+                Class A Diesel Pusher • 40ft Luxury Quad-Slide Floorplan
+              </div>
+            </div>
+
+            <!-- Specs Grid -->
+            <div class="rv-hero-specs-list">
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Manufacturer</span>
+                <span class="rv-hero-spec-val">Grand Tourer Motor Coach</span>
+              </div>
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Model Year</span>
+                <span class="rv-hero-spec-val" id="display-rv-year">2024</span>
+              </div>
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Registration</span>
+                <span class="rv-hero-spec-val">Active (State Tag: RV-8842-FL)</span>
+              </div>
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Chassis / Powertrain</span>
+                <span class="rv-hero-spec-val" id="display-rv-chassis">Freightliner XC-R • Cummins L9</span>
+              </div>
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Odometer / Hours</span>
+                <span class="rv-hero-spec-val" id="display-rv-mileage">14,820 mi • 312 Gen Hrs</span>
+              </div>
+              <div class="rv-hero-spec-item">
+                <span class="rv-hero-spec-lbl">Gross Vehicle Weight</span>
+                <span class="rv-hero-spec-val">38,320 lbs GVWR</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="rv-hero-actions">
+              <a href="rv-details.html" class="btn btn-forest" style="font-size: 0.85rem;">
+                <span>View Full Tech Details</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+              <button type="button" class="btn btn-secondary" data-modal-target="rv-edit-modal" style="font-size: 0.85rem;">
+                <span>Edit Specs</span>
+              </button>
+              <a href="appointments.html" class="btn btn-secondary" style="font-size: 0.85rem;">
+                <span>Book Service Bay</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Registered Coach Fleet / Secondary Vehicles Grid -->
+        <div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <div>
+              <h3 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 700; color: var(--color-text-main); margin: 0;">
+                Additional Registered Units
+              </h3>
+              <p style="font-size: 0.82rem; color: var(--color-text-light); margin-top: 2px;">
+                Manage secondary trailers, tow vehicles, or past coaches
+              </p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" data-modal-target="add-rv-modal">
+              <span>+ Add Another Unit</span>
+            </button>
+          </div>
+
+          <div class="rv-fleet-grid">
+            
+            <!-- Secondary Unit 1: Travel Trailer -->
+            <article class="rv-unit-card">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="sidebar-badge">TOWABLE</span>
+                  <span class="table-status-pill status-completed">
+                    <span class="rv-status-dot"></span>
+                    <span>Ready for Storage</span>
+                  </span>
+                </div>
+                <h4 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-main); margin: 0 0 4px;">
+                  2023 TrailMaster Ridge 26BH
+                </h4>
+                <div style="font-size: 0.82rem; color: var(--color-text-muted);">
+                  Travel Trailer (Dual Axle) • 26ft Length
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); font-size: 0.8rem;">
+                <div>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-light); text-transform: uppercase;">Dry Weight</span>
+                  <div style="font-weight: 600;">5,840 lbs</div>
+                </div>
+                <div>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-light); text-transform: uppercase;">Roof Material</span>
+                  <div style="font-weight: 600;">Alpha TPO Membrane</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 10px; border-top: 1px solid var(--color-border-subtle);">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showDashboardToast('Switched primary coach view.')">
+                  <span>Set as Primary</span>
+                </button>
+                <a href="rv-details.html" class="btn-table-action">
+                  <span>Specs →</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Secondary Unit 2: Dinghy Tow Vehicle -->
+            <article class="rv-unit-card">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span class="sidebar-badge">DINGHY / TOAD</span>
+                  <span class="table-status-pill status-completed">
+                    <span class="rv-status-dot"></span>
+                    <span>Braking Sync OK</span>
+                  </span>
+                </div>
+                <h4 style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-text-main); margin: 0 0 4px;">
+                  2022 TrailRunner 4x4
+                </h4>
+                <div style="font-size: 0.82rem; color: var(--color-text-muted);">
+                  Flat-Tow Vehicle • Blue Ox Baseplate & Air Force One Braking
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 12px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); font-size: 0.8rem;">
+                <div>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-light); text-transform: uppercase;">Tow Curb Weight</span>
+                  <div style="font-weight: 600;">4,450 lbs</div>
+                </div>
+                <div>
+                  <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-light); text-transform: uppercase;">Aux Braking</span>
+                  <div style="font-weight: 600;">Proportional Air</div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 10px; border-top: 1px solid var(--color-border-subtle);">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="showDashboardToast('Tow vehicle telemetry synced.')">
+                  <span>Sync Telemetry</span>
+                </button>
+                <a href="rv-details.html" class="btn-table-action">
+                  <span>Specs →</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Dashboard Footer -->
+      <footer style="padding: 24px 32px; border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span>ROADREADY RV SERVICE • KEEP THE JOURNEY MOVING.</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="../services.html" class="footer-link" style="color: var(--color-text-muted);">Services</a>
+          <a href="../contact.html" class="footer-link" style="color: var(--color-text-muted);">Support Bay</a>
+          <a href="../about.html" class="footer-link" style="color: var(--color-text-muted);">About Us</a>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- ADD COACH MODAL -->
+  <div class="modal-backdrop" id="add-rv-modal" role="dialog" aria-modal="true" aria-labelledby="add-rv-modal-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="add-rv-modal-title">Register New RV or Tow Vehicle</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="event.preventDefault(); closeDashboardModal(this.closest('.modal-backdrop')); showDashboardToast('New coach registered and added to fleet.');">
+          <div class="form-group">
+            <label class="form-label">Coach Nickname / Name</label>
+            <input type="text" class="form-input" placeholder="e.g. 2024 Grand Tourer or Weekend Roamer" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Classification</label>
+            <select class="form-select">
+              <option value="Class A Diesel Pusher">Class A Diesel Pusher</option>
+              <option value="Class A Gas">Class A Gas Motorhome</option>
+              <option value="Class B Camper Van">Class B Camper Van</option>
+              <option value="Class C Motorhome">Class C Motorhome</option>
+              <option value="Fifth Wheel">Fifth Wheel</option>
+              <option value="Travel Trailer">Travel Trailer</option>
+              <option value="Tow Vehicle (Toad)">Tow Vehicle (Toad)</option>
+            </select>
+          </div>
+          <div class="modal-form-grid">
+            <div class="form-group">
+              <label class="form-label">Model Year</label>
+              <input type="number" class="form-input" value="2024" min="1980" max="2027">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Length (Feet)</label>
+              <input type="number" class="form-input" placeholder="e.g. 40">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+            <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+            <button type="submit" class="btn btn-forest">Register Unit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- RV Details Live Editor Modal -->
+  <div class="modal-backdrop" id="rv-edit-modal" role="dialog" aria-modal="true" aria-labelledby="rv-modal-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="rv-modal-title">Update RV Specifications</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="rv-details-form">
+          <div class="form-group">
+            <label for="rvNameInput" class="form-label">RV / Coach Custom Name</label>
+            <input type="text" id="rvNameInput" name="rvName" class="form-input" value="2024 Grand Tourer Elite" required>
+          </div>
+          <div class="form-group">
+            <label for="rvTypeInput" class="form-label">RV Classification</label>
+            <select id="rvTypeInput" name="rvType" class="form-select">
+              <option value="Class A Diesel Pusher (40ft)" selected>Class A Diesel Pusher</option>
+              <option value="Class A Gas Motorhome">Class A Gas Motorhome</option>
+              <option value="Class B Camper Van">Class B Camper Van</option>
+              <option value="Class C Motorhome">Class C Motorhome</option>
+              <option value="Super C Diesel Coach">Super C Diesel Coach</option>
+              <option value="Fifth Wheel Trailer">Fifth Wheel Trailer</option>
+              <option value="Travel Trailer">Travel Trailer</option>
+            </select>
+          </div>
+          <div class="modal-form-grid">
+            <div class="form-group">
+              <label for="rvYearInput" class="form-label">Model Year</label>
+              <input type="number" id="rvYearInput" name="rvYear" class="form-input" value="2024" min="1980" max="2027">
+            </div>
+            <div class="form-group">
+              <label for="rvMileageInput" class="form-label">Mileage / Hours</label>
+              <input type="text" id="rvMileageInput" name="rvMileage" class="form-input" value="14,820 mi • 312 hrs">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="rvChassisInput" class="form-label">Chassis & Powertrain</label>
+            <input type="text" id="rvChassisInput" name="rvChassis" class="form-input" value="Freightliner XC-R • Cummins L9">
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
+            <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+            <button type="submit" class="btn btn-forest">Save RV Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="modal-backdrop" id="logout-modal" role="dialog" aria-modal="true" aria-labelledby="logout-modal-title">
+    <div class="modal-window" style="max-width: 440px;">
+      <div class="modal-head">
+        <h3 id="logout-modal-title">Confirm Sign Out</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 24px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(185, 74, 72, 0.12); color: var(--color-danger); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </div>
+        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--color-text-main);">Sign Out of RoadReady Portal?</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 20px;">
+          Your current session will be closed. You can sign back in anytime with your registered coach email.
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <button type="button" class="btn btn-secondary" data-modal-close style="flex: 1;">Cancel</button>
+          <a href="../login.html" class="btn btn-forest" style="flex: 1; justify-content: center; background: var(--color-danger); border-color: var(--color-danger);">
+            <span>Sign Out</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Dashboard JavaScript -->
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

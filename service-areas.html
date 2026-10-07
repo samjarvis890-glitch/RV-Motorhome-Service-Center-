@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>ROADREADY RV SERVICE — Service Areas &amp; Coverage Eligibility</title>
+  <meta name="description" content="Explore RoadReady RV Service coverage logic, scheduling evaluation, and service path matching for motorhomes, fifth wheels, and travel trailers.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       GLOBAL MASTER NAVBAR
+       Exact global component shared across the entire website
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-container">
+      <nav class="navbar-wrapper" aria-label="Main Navigation">
+        
+        <!-- Brand Logo (Light / Dark Adaptive) -->
+        <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service - Return to homepage">
+          <img src="assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="brand-logo-img logo-light-theme" width="240" height="40">
+          <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="brand-logo-img logo-dark-theme" width="240" height="40">
+        </a>
+
+        <!-- Desktop Navigation Items (1281px+) -->
+        <ul class="navbar-nav-desktop" role="menubar">
+          
+          <!-- Home Dropdown -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Home</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home Pages">
+              <a href="index.html" class="nav-dropdown-link" role="menuitem">Home 1</a>
+              <a href="home2.html" class="nav-dropdown-link" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <!-- Services: DIRECT LINK -->
+          <li class="nav-item" role="none">
+            <a href="services.html" class="nav-link" role="menuitem">Services</a>
+          </li>
+
+          <!-- About: DIRECT LINK -->
+          <li class="nav-item" role="none">
+            <a href="about.html" class="nav-link" role="menuitem">About</a>
+          </li>
+
+          <!-- Service Areas: DIRECT LINK, ACTIVE ON THIS PAGE -->
+          <li class="nav-item" role="none">
+            <a href="service-areas.html" class="nav-link active" role="menuitem" aria-current="page">Service Areas</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+
+          <!-- Owner Portal Dropdown (Strictly 2 items: User Dashboard & Admin Dashboard) -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Owner Portal</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Owner Portal Submenu">
+              <a href="dashboard/index.html" class="nav-dropdown-link" role="menuitem">User Dashboard</a>
+              <a href="admin-dashboard/index.html" class="nav-dropdown-link" role="menuitem">Admin Dashboard</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Navbar Controls & Mobile Triggers -->
+        <div class="navbar-controls">
+          <!-- Dark Mode Toggle Button -->
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- RTL / LTR Toggle Button -->
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle Text Direction" title="Toggle RTL / LTR">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+            </svg>
+          </button>
+
+          <!-- Desktop Login Button -->
+          <a href="login.html" class="btn btn-forest btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>LOGIN</span>
+          </a>
+
+          <!-- Hamburger Button (Visible on <=1280px Tablet & Mobile) -->
+          <button type="button" class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE & TABLET DRAWER NAVIGATION
+       Contains ALL navigation links with smooth nested accordions
+       ====================================================================== -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service">
+        <img src="assets/images/brand/roadready-mark.svg" alt="RoadReady Mark" width="34" height="34">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-primary); letter-spacing: 0.05em;">ROADREADY</span>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <nav class="drawer-nav-list" aria-label="Mobile Menu Links">
+        
+        <!-- Home Collapsible Submenu -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn" data-submenu-target="drawer-home-sub" aria-expanded="false">
+            <span>Home</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu" id="drawer-home-sub">
+            <a href="index.html" class="drawer-submenu-link">Home 1</a>
+            <a href="home2.html" class="drawer-submenu-link">Home 2</a>
+          </div>
+        </div>
+
+        <a href="services.html" class="drawer-nav-link">Services</a>
+        <a href="about.html" class="drawer-nav-link">About</a>
+        
+        <!-- Service Areas (Active on this page) -->
+        <a href="service-areas.html" class="drawer-nav-link active" aria-current="page">Service Areas</a>
+        
+        <a href="blog.html" class="drawer-nav-link">Blog</a>
+        <a href="contact.html" class="drawer-nav-link">Contact</a>
+        
+        <!-- Owner Portal Collapsible Submenu (Strictly 2 items) -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn" data-submenu-target="drawer-portal-sub" aria-expanded="false">
+            <span>Owner Portal</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu" id="drawer-portal-sub">
+            <a href="dashboard/index.html" class="drawer-submenu-link">User Dashboard</a>
+            <a href="admin-dashboard/index.html" class="drawer-submenu-link">Admin Dashboard</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="drawer-divider"></div>
+
+      <!-- Drawer Login CTA -->
+      <a href="login.html" class="btn btn-forest drawer-login-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>LOGIN</span>
+      </a>
+
+      <!-- Theme and RTL Controls inside drawer -->
+      <div class="drawer-controls-row">
+        <button type="button" class="drawer-control-item theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <span class="theme-label-text">Dark Mode</span>
+        </button>
+
+        <button type="button" class="drawer-control-item rtl-toggle-btn" aria-label="Toggle Text Direction">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+          </svg>
+          <span>RTL / LTR</span>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MAIN CONTENT
+       ====================================================================== -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION 1: SERVICE COVERAGE HERO
+         Explains coverage readiness and vehicle clearance matching
+         ==================================================================== -->
+    <section class="coverage-hero-section" aria-labelledby="coverage-hero-heading">
+      <div class="site-container">
+        <div class="coverage-hero-grid">
+          
+          <!-- Content Left Column -->
+          <div class="coverage-hero-content">
+            <div class="eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              <span>COVERAGE &amp; AVAILABILITY</span>
+            </div>
+            
+            <h1 class="coverage-hero-title" id="coverage-hero-heading">
+              WHERE YOUR NEXT SERVICE STARTS.
+            </h1>
+            
+            <p class="coverage-hero-lead">
+              Service availability depends on your RV type, requested maintenance scope, and current service bay scheduling. Check coverage readiness before booking.
+            </p>
+
+            <div class="coverage-hero-actions">
+              <a href="#availability-check" class="btn btn-primary btn-lg">
+                <span>CHECK SERVICE AVAILABILITY</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="services.html" class="btn btn-secondary btn-lg">
+                <span>VIEW SERVICES</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Right Column with Route Bar -->
+          <div class="coverage-hero-visual">
+            <div class="coverage-hero-frame">
+              <img 
+                src="assets/images/service-areas/service-areas-hero.jpg" 
+                alt="RV staging area and bay intake inspection at RoadReady Service" 
+                class="coverage-hero-img"
+                width="720"
+                height="540"
+                loading="eager"
+              >
+            </div>
+
+            <!-- Route Indicator Bar -->
+            <div class="coverage-route-bar" aria-label="Coverage intake sequence">
+              <div class="coverage-route-col">
+                <span class="coverage-route-label">01 LOCATION</span>
+                <span class="coverage-route-sub">Regional Intake</span>
+              </div>
+              <div class="coverage-route-col">
+                <span class="coverage-route-label">02 COACH TYPE</span>
+                <span class="coverage-route-sub">Class &amp; Specs</span>
+              </div>
+              <div class="coverage-route-col">
+                <span class="coverage-route-label">03 SERVICE BAY</span>
+                <span class="coverage-route-sub">Tooling Match</span>
+              </div>
+              <div class="coverage-route-col">
+                <span class="coverage-route-label">04 DISPATCH</span>
+                <span class="coverage-route-sub">Confirmed Fit</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: HOW COVERAGE WORKS
+         3-part horizontal coverage logic (Location, RV, Need)
+         ==================================================================== -->
+    <section class="coverage-logic-section" aria-labelledby="coverage-logic-heading">
+      <div class="site-container">
+        
+        <div class="coverage-logic-header">
+          <div class="eyebrow" style="justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>COVERAGE LOGIC</span>
+          </div>
+          <h2 id="coverage-logic-heading">SERVICE COVERAGE IS ABOUT THE RIGHT FIT.</h2>
+          <p>
+            Rather than arbitrary geographic circles, our service availability is determined by vehicle dimensions, system complexity, and specialist bay scheduling.
+          </p>
+        </div>
+
+        <div class="coverage-logic-grid">
+          
+          <!-- Logic Card 1 -->
+          <div class="coverage-logic-card">
+            <div class="coverage-logic-top">
+              <span class="coverage-logic-num">01</span>
+              <span class="coverage-logic-tag">FACILITY &amp; DISPATCH</span>
+            </div>
+            <h3 class="coverage-logic-title">YOUR LOCATION</h3>
+            <p class="coverage-logic-desc">
+              Evaluating drive time, staging space, and regional dispatch feasibility for mobile or facility bay appointment scheduling.
+            </p>
+          </div>
+
+          <!-- Logic Card 2 -->
+          <div class="coverage-logic-card">
+            <div class="coverage-logic-top">
+              <span class="coverage-logic-num">02</span>
+              <span class="coverage-logic-tag">SPECS &amp; CLEARANCE</span>
+            </div>
+            <h3 class="coverage-logic-title">YOUR RV</h3>
+            <p class="coverage-logic-desc">
+              Verifying coach length, gross vehicle weight rating, chassis specifications, and slide-out bay clearance.
+            </p>
+          </div>
+
+          <!-- Logic Card 3 -->
+          <div class="coverage-logic-card">
+            <div class="coverage-logic-top">
+              <span class="coverage-logic-num">03</span>
+              <span class="coverage-logic-tag">DIAGNOSTIC SCOPE</span>
+            </div>
+            <h3 class="coverage-logic-title">YOUR NEED</h3>
+            <p class="coverage-logic-desc">
+              Matching requested mechanical, electrical, or structural diagnostics with tooling, lift capacity, and technician certification.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: FIND THE RIGHT SERVICE PATH
+         Interactive Service Path Selector linking to individual service pages
+         ==================================================================== -->
+    <section class="coverage-path-section" aria-labelledby="coverage-path-heading">
+      <div class="site-container">
+        
+        <div class="coverage-path-header">
+          <div class="eyebrow" style="justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>SERVICE PATH FINDER</span>
+          </div>
+          <h2 id="coverage-path-heading">START WITH WHAT YOUR RV NEEDS.</h2>
+          <p>
+            Select your primary service interest to preview dedicated scope, diagnostic steps, and pre-booking requirements.
+          </p>
+        </div>
+
+        <div class="coverage-path-layout">
+          
+          <!-- Path Selection Column -->
+          <div class="coverage-path-controls">
+            <span class="coverage-path-prompt">WHAT DO YOU NEED HELP WITH?</span>
+            
+            <div class="coverage-path-menu" role="tablist" aria-label="Service Need Selection">
+              
+              <button type="button" class="coverage-path-btn active" data-path-key="maintenance" role="tab" aria-selected="true">
+                <span>Routine Maintenance &amp; Chassis</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="coverage-path-btn" data-path-key="winterization" role="tab" aria-selected="false">
+                <span>Seasonal Prep &amp; Winterization</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="coverage-path-btn" data-path-key="electrical-plumbing" role="tab" aria-selected="false">
+                <span>Electrical &amp; Plumbing Systems</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="coverage-path-btn" data-path-key="hvac-appliances" role="tab" aria-selected="false">
+                <span>Rooftop HVAC &amp; Appliances</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="coverage-path-btn" data-path-key="roof-exterior" role="tab" aria-selected="false">
+                <span>Roof Seals &amp; Exterior Care</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              <button type="button" class="coverage-path-btn" data-path-key="pre-trip" role="tab" aria-selected="false">
+                <span>Pre-Trip Inspection &amp; Staging</span>
+                <svg class="coverage-path-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- Dynamic Path Preview Card -->
+          <div class="coverage-preview-card" aria-live="polite">
+            <span class="coverage-preview-badge">SELECTED SERVICE PATH</span>
+            <h3 class="coverage-preview-title" id="coverage-preview-title">ROUTINE MAINTENANCE</h3>
+            <p class="coverage-preview-desc" id="coverage-preview-desc">
+              Chassis lubrication, powertrain inspection, engine cooling, and brake pad wear evaluation.
+            </p>
+            
+            <div class="coverage-preview-actions">
+              <a href="maintenance.html" class="btn btn-primary" id="coverage-preview-link">
+                <span>VIEW ROUTINE MAINTENANCE</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: AVAILABILITY CHECK
+         Intake form verifying service bay suitability and vehicle specs
+         ==================================================================== -->
+    <section class="coverage-check-section" id="availability-check-section" aria-labelledby="coverage-check-heading">
+      <div class="site-container">
+        
+        <div class="coverage-check-grid">
+          
+          <!-- Left Column: Form Card (Form ID: availability-check) -->
+          <div class="coverage-check-form-card">
+            <div class="coverage-check-header">
+              <div class="eyebrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>AVAILABILITY INQUIRY</span>
+              </div>
+              <h2 id="coverage-check-heading">TELL US WHERE THE RV IS.</h2>
+              <p>
+                Enter your location and vehicle specs so our dispatch desk can verify technician matching and scheduling availability.
+              </p>
+            </div>
+
+            <form id="availability-check" class="coverage-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="coverage-zip" class="form-label">ZIP / Postal Area <span class="required-star">*</span></label>
+                  <input type="text" id="coverage-zip" class="form-input" placeholder="e.g. 80202 or City Area" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="coverage-rv-type" class="form-label">Coach / RV Type <span class="required-star">*</span></label>
+                  <select id="coverage-rv-type" class="form-select" required>
+                    <option value="">Select coach type...</option>
+                    <option value="class-a">Class A Motorhome (Diesel / Gas)</option>
+                    <option value="class-b">Class B / Camper Van</option>
+                    <option value="class-c">Class C Motorhome</option>
+                    <option value="fifth-wheel">Fifth Wheel Trailer</option>
+                    <option value="travel-trailer">Travel Trailer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="coverage-service" class="form-label">Service Needed <span class="required-star">*</span></label>
+                  <select id="coverage-service" class="form-select" required>
+                    <option value="">Select primary need...</option>
+                    <option value="maintenance">Routine Maintenance &amp; Chassis</option>
+                    <option value="winterization">Seasonal Prep &amp; Winterization</option>
+                    <option value="electrical-plumbing">Electrical &amp; Plumbing Systems</option>
+                    <option value="hvac-appliances">Rooftop HVAC &amp; Appliances</option>
+                    <option value="roof-exterior">Roof Seals &amp; Exterior Care</option>
+                    <option value="pre-trip">Pre-Trip Inspection &amp; Staging</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="coverage-timeline" class="form-label">Preferred Timing <span class="required-star">*</span></label>
+                  <select id="coverage-timeline" class="form-select" required>
+                    <option value="">Select timeframe...</option>
+                    <option value="immediate">Immediate / Departure within 48h</option>
+                    <option value="next-week">Next Week</option>
+                    <option value="within-month">Within 30 Days</option>
+                    <option value="seasonal">Seasonal Storage</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="coverage-notes" class="form-label">Vehicle Details or Specific Symptoms</label>
+                <textarea id="coverage-notes" class="form-textarea" rows="3" placeholder="Provide vehicle make, overall length, or describe any warning lights, leaks, or target departure dates..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                <span>CHECK AVAILABILITY</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: Verification Factors & Honest Note -->
+          <div class="coverage-check-info-card">
+            <div class="coverage-factors-box">
+              <h3 class="coverage-factors-title">HOW WE EVALUATE COVERAGE</h3>
+              
+              <div class="coverage-factors-list">
+                <div class="coverage-factor-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: var(--color-text-main); display: block;">Clearance &amp; Bay Height</strong>
+                    Verifying bay door height, lift tonnage, and slide-out staging room for your specific model.
+                  </div>
+                </div>
+
+                <div class="coverage-factor-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: var(--color-text-main); display: block;">Tooling &amp; Diagnostic Match</strong>
+                    Ensuring digital scan tools, PEX pressure gauges, and sealant rigs are allocated.
+                  </div>
+                </div>
+
+                <div class="coverage-factor-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: var(--color-text-main); display: block;">Certified Technician Capacity</strong>
+                    Assigning specialists certified in 12V DC electrical, hydronic heating, and chassis safety.
+                  </div>
+                </div>
+
+                <div class="coverage-factor-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong style="color: var(--color-text-main); display: block;">Transparent Scheduling</strong>
+                    Confirming realistic intake windows and completion estimates before your coach arrives.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Honest Help Card -->
+            <div class="coverage-factors-box" style="background-color: var(--color-surface-secondary); border-color: var(--color-border);">
+              <div style="display: flex; gap: 0.85rem; align-items: flex-start;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <div>
+                  <h4 style="font-size: 0.9375rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 0.35rem;">Planning an Upcoming Tour?</h4>
+                  <p style="font-size: 0.84rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">
+                    Note your departure schedule in the form so we can triage intake and confirm pre-trip inspection windows in advance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: BEFORE YOU REQUEST SERVICE
+         6 Document & Vehicle Checklist items
+         ==================================================================== -->
+    <section class="coverage-prep-section" aria-labelledby="coverage-prep-heading">
+      <div class="site-container">
+        
+        <div class="coverage-prep-header">
+          <div class="eyebrow" style="justify-content: center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>PREPARATION CHECKLIST</span>
+          </div>
+          <h2 id="coverage-prep-heading">A BETTER REQUEST STARTS WITH BETTER DETAILS.</h2>
+          <p>
+            Having these 6 specifications ready ensures rapid evaluation, exact parts pre-ordering, and accurate bay allocation.
+          </p>
+        </div>
+
+        <div class="coverage-doc-grid">
+          
+          <!-- Doc Item 1 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">01</span>
+              <span class="coverage-doc-tag">COACH SPECS</span>
+            </div>
+            <h3 class="coverage-doc-title">RV TYPE &amp; LENGTH</h3>
+            <p class="coverage-doc-desc">
+              Make, model, model year, overall bumper-to-hitch length, chassis platform, and slide-out configuration.
+            </p>
+          </div>
+
+          <!-- Doc Item 2 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">02</span>
+              <span class="coverage-doc-tag">CURRENT SITE</span>
+            </div>
+            <h3 class="coverage-doc-title">LOCATION</h3>
+            <p class="coverage-doc-desc">
+              ZIP code, storage facility status, campground site number, or residential pad access conditions.
+            </p>
+          </div>
+
+          <!-- Doc Item 3 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">03</span>
+              <span class="coverage-doc-tag">PRIMARY FOCUS</span>
+            </div>
+            <h3 class="coverage-doc-title">SERVICE NEED</h3>
+            <p class="coverage-doc-desc">
+              Specific symptoms, warning lamps, system failure history, or scheduled mileage interval.
+            </p>
+          </div>
+
+          <!-- Doc Item 4 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">04</span>
+              <span class="coverage-doc-tag">SCHEDULE</span>
+            </div>
+            <h3 class="coverage-doc-title">TIMING &amp; DEPARTURE</h3>
+            <p class="coverage-doc-desc">
+              Target trip departure date, campground check-out timeline, or seasonal winterization deadline.
+            </p>
+          </div>
+
+          <!-- Doc Item 5 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">05</span>
+              <span class="coverage-doc-tag">SYMPTOM CONTEXT</span>
+            </div>
+            <h3 class="coverage-doc-title">DESCRIPTION</h3>
+            <p class="coverage-doc-desc">
+              Detailed notes on when the issue occurs, previous technician repairs, or recent battery upgrades.
+            </p>
+          </div>
+
+          <!-- Doc Item 6 -->
+          <div class="coverage-doc-card">
+            <div class="coverage-doc-top">
+              <span class="coverage-doc-num">06</span>
+              <span class="coverage-doc-tag">DIAGNOSTICS</span>
+            </div>
+            <h3 class="coverage-doc-title">PHOTOS &amp; DATA PLATES</h3>
+            <p class="coverage-doc-desc">
+              Clear photos of vehicle VIN tags, appliance model serial stickers, roof lap seals, or fault displays.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: FINAL COVERAGE CTA
+         Panoramic Road Visual and Dual Clear CTAs
+         ==================================================================== -->
+    <section class="coverage-closing-section" aria-labelledby="coverage-closing-heading">
+      <div class="site-container">
+        
+        <div class="coverage-closing-banner">
+          <img 
+            src="assets/images/service-areas/service-areas-closing.jpg" 
+            alt="Scenic highway journey prepared by RoadReady RV Service" 
+            class="coverage-closing-bg-img"
+            width="1280"
+            height="500"
+            loading="lazy"
+          >
+          
+          <div class="coverage-closing-overlay">
+            <div class="eyebrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>SERVICE DISPATCH READY</span>
+            </div>
+
+            <h2 class="coverage-closing-title" id="coverage-closing-heading">
+              LET'S FIND THE RIGHT NEXT STEP.
+            </h2>
+
+            <p class="coverage-closing-desc">
+              Whether you are planning routine chassis maintenance, preparing for seasonal storage, or inspecting before a cross-country tour, our service desk is ready to review your coach requirements.
+            </p>
+
+            <div class="coverage-closing-actions">
+              <a href="contact.html#service-request" class="btn btn-primary btn-lg">
+                <span>START A SERVICE REQUEST</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="services.html" class="btn btn-secondary btn-lg">
+                <span>EXPLORE SERVICES</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       GLOBAL MASTER FOOTER
+       Exact global component shared across the entire website
+       (Top-aligned columns, zero duplicate controls)
+       ====================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-container">
+      
+      <div class="footer-main-grid">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-brand-logo-link" aria-label="RoadReady RV Service">
+            <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="footer-brand-logo" width="220" height="38">
+          </a>
+          <div class="footer-tagline">KEEP THE JOURNEY MOVING.</div>
+          <p class="footer-desc">
+            Specialist care for motorhomes and towables. Dedicated bays for drivetrain, electrical banks, plumbing, HVAC, and weatherproofing.
+          </p>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">SERVICES</h3>
+          <ul class="footer-links-list">
+            <li><a href="maintenance.html" class="footer-link">RV Maintenance</a></li>
+            <li><a href="winterization.html" class="footer-link">Winterization</a></li>
+            <li><a href="electrical-plumbing.html" class="footer-link">Electrical &amp; Plumbing</a></li>
+            <li><a href="hvac-appliances.html" class="footer-link">HVAC &amp; Appliances</a></li>
+            <li><a href="roof-exterior.html" class="footer-link">Roof &amp; Exterior</a></li>
+            <li><a href="pre-trip-inspection.html" class="footer-link">Pre-Trip Inspection</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Owner Portal -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">OWNER PORTAL</h3>
+          <ul class="footer-links-list">
+            <li><a href="dashboard/index.html" class="footer-link">Owner Dashboard</a></li>
+            <li><a href="dashboard/index.html#appointments" class="footer-link">Service Appointments</a></li>
+            <li><a href="dashboard/index.html#history" class="footer-link">Maintenance History</a></li>
+            <li><a href="dashboard/index.html#warranty" class="footer-link">Warranty Status</a></li>
+            <li><a href="dashboard/index.html#messages" class="footer-link">Messages</a></li>
+            <li><a href="dashboard/profile.html" class="footer-link">Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">COMPANY</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="service-areas.html" class="footer-link">Service Areas</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="contact.html#service-request" class="footer-link">Service Request</a></li>
+            <li><a href="dashboard/index.html" class="footer-link">Owner Portal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar (Only Copyright, No Duplicate Theme/RTL Controls) -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          © 2026 ROADREADY RV SERVICE. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL: PLAN YOUR SERVICE
+       ====================================================================== -->
+  <div class="modal-backdrop" id="service-planner-modal" role="dialog" aria-modal="true" aria-labelledby="planner-modal-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="planner-modal-title">Plan Your RV Service</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="service-planner-form">
+          <div class="form-group">
+            <label for="coach-type" class="form-label">RV / Motorhome Type</label>
+            <select id="coach-type" class="form-select" required>
+              <option value="">Select coach type...</option>
+              <option value="class-a">Class A Motorhome (Diesel / Gas)</option>
+              <option value="class-b">Class B / Camper Van</option>
+              <option value="class-c">Class C Motorhome</option>
+              <option value="fifth-wheel">Fifth Wheel Trailer</option>
+              <option value="travel-trailer">Travel Trailer</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-category" class="form-label">Primary Service Required</label>
+            <select id="service-category" class="form-select" required>
+              <option value="">Select service...</option>
+              <option value="rv-maintenance">Chassis &amp; Powertrain Care</option>
+              <option value="winterization">Seasonal Winterization / De-Winterization</option>
+              <option value="electrical-plumbing">Electrical Banks &amp; Plumbing Leak Test</option>
+              <option value="hvac-appliances">A/C, Furnace &amp; Refrigerator Service</option>
+              <option value="roof-exterior">Roof Dicor Lap Seal Inspection</option>
+              <option value="pre-trip">Pre-Trip Safety &amp; System Staging</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-timeline" class="form-label">Preferred Timeframe</label>
+            <select id="preferred-timeline" class="form-select" required>
+              <option value="immediate">Immediate / Departure within 48h</option>
+              <option value="next-week">Next Week</option>
+              <option value="seasonal">Seasonal Storage / Winter Prep</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-notes" class="form-label">Notes on Vehicle Symptoms or Needs</label>
+            <textarea id="service-notes" class="form-textarea" placeholder="e.g. A/C cooling delta low, roof inspection before mountain trip..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <span>SUBMIT SERVICE REQUEST</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

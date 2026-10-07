@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>OEM Warranty Claims Manager — ROADREADY RV SERVICE Admin</title>
+  <meta name="description" content="Manage OEM factory warranty claims, pre-authorization approvals, extended service contracts, and reimbursement settlements.">
+  <meta name="theme-color" content="#173B35">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/brand/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <a href="#admin-main-content" class="skip-link">Skip to warranty claims</a>
+  <div class="admin-sidebar-backdrop" id="admin-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="admin-layout">
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin Navigation Sidebar">
+      <div class="admin-sidebar-header">
+        <a href="index.html" class="admin-brand-link" aria-label="RoadReady Admin Home">
+          <img src="../assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="admin-brand-logo logo-light-theme" width="160" height="28">
+          <img src="../assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="admin-brand-logo logo-dark-theme" width="160" height="28">
+          <span class="admin-brand-badge">ROADREADY ADMIN</span>
+        </a>
+        <button type="button" class="admin-sidebar-close" aria-label="Close navigation sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <nav class="admin-nav-container">
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Operations</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item"><a href="index.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg><span>Dashboard</span></span></a></li>
+            <li class="admin-nav-item"><a href="service-requests.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span>Service Requests</span></span><span class="admin-nav-badge badge-accent">4</span></a></li>
+            <li class="admin-nav-item"><a href="appointments.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg><span>Appointments</span></span><span class="admin-nav-badge badge-success">3 Today</span></a></li>
+            <li class="admin-nav-item"><a href="rv-owners.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>RV Owners</span></span></a></li>
+            <li class="admin-nav-item"><a href="rv-records.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg><span>RV Records</span></span></a></li>
+          </ul>
+        </div>
+
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Service Management</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item"><a href="maintenance.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg><span>Maintenance</span></span></a></li>
+            <li class="admin-nav-item"><a href="service-types.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg><span>Service Types</span></span></a></li>
+            <li class="admin-nav-item"><a href="technicians.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg><span>Technicians</span></span></a></li>
+            <li class="admin-nav-item"><a href="warranty.html" class="admin-nav-link active" aria-current="page"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>Warranty</span></span></a></li>
+          </ul>
+        </div>
+
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Communication</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item"><a href="messages.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span>Messages</span></span><span class="admin-nav-badge badge-accent">1</span></a></li>
+            <li class="admin-nav-item"><a href="contact-requests.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><span>Contact Requests</span></span></a></li>
+          </ul>
+        </div>
+
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Documents & Business</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item"><a href="documents.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg><span>Documents</span></span></a></li>
+            <li class="admin-nav-item"><a href="service-areas.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg><span>Service Areas</span></span></a></li>
+            <li class="admin-nav-item"><a href="reports.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><span>Reports</span></span></a></li>
+            <li class="admin-nav-item"><a href="settings.html" class="admin-nav-link"><span class="admin-link-content"><svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span>Settings</span></span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <a href="../index.html" class="admin-footer-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg><span>Back to Website</span></a>
+        <button type="button" class="admin-footer-link link-logout" data-modal-target="logout-modal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg><span>Logout</span></button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="admin-workspace">
+
+      <!-- Topbar -->
+      <header class="admin-topbar" role="banner">
+        <div class="admin-topbar-left">
+          <button type="button" class="admin-drawer-toggle" aria-label="Open Navigation Sidebar">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="admin-search-box">
+            <svg class="admin-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="search" class="admin-search-input" placeholder="Search claims by #CLM, OEM Provider, VIN..." aria-label="Search warranty claims">
+            <kbd class="admin-search-shortcut">⌘K</kbd>
+          </div>
+        </div>
+
+        <div class="admin-topbar-right">
+          <button type="button" class="admin-topbar-btn theme-toggle-btn" aria-label="Toggle Dark Mode">
+            <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line></svg>
+          </button>
+          <button type="button" class="admin-topbar-btn rtl-toggle-btn" aria-label="Toggle RTL / LTR">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline></svg>
+          </button>
+          
+          <div class="admin-dropdown-wrapper">
+            <button type="button" class="admin-profile-trigger" aria-label="Open Admin Menu">
+              <div class="admin-avatar">RA</div>
+              <div class="admin-profile-meta">
+                <span class="admin-profile-name">ROADREADY ADMIN</span>
+                <span class="admin-profile-role">Supervisor</span>
+              </div>
+              <svg class="admin-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="admin-dropdown-menu admin-profile-menu">
+              <a href="settings.html" class="admin-menu-item">System Settings</a>
+              <button type="button" class="admin-menu-item" data-modal-target="logout-modal" style="color: var(--color-danger);">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="admin-main-content" id="admin-main-content">
+        
+        <div class="admin-page-header">
+          <div class="admin-page-title-group">
+            <span class="admin-pretitle">OEM CLAIMS & EXTENDED COVERAGE</span>
+            <h1 class="admin-page-title">Warranty Claims Manager</h1>
+            <p class="admin-page-subtitle">
+              Manage direct OEM manufacturer claims, warranty pre-authorization approvals, parts reimbursement ledgers, and third-party extended contracts.
+            </p>
+          </div>
+          <div class="admin-header-actions">
+            <button type="button" class="btn-admin-primary" data-modal-target="add-claim-modal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <span>Submit Warranty Claim</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">Active Claims</span>
+              <div class="admin-kpi-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">4 Open</div>
+            <p class="admin-kpi-desc">Currently in factory adjudication pipeline</p>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">Reimbursed (MTD)</span>
+              <div class="admin-kpi-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">$14,850</div>
+            <p class="admin-kpi-desc">100% recovered for parts & certified labor</p>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">OEM Approvals Pending</span>
+              <div class="admin-kpi-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">2 Claims</div>
+            <p class="admin-kpi-desc">Awaiting Freightliner & Aqua-Hot clearance</p>
+          </div>
+
+          <div class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">First-Pass Approval</span>
+              <div class="admin-kpi-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline></svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">97.4%</div>
+            <p class="admin-kpi-desc">Due to thorough digital photo documentation</p>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="admin-filter-bar">
+          <div class="admin-filter-group">
+            <button type="button" class="admin-pill-btn active">All Claims (5)</button>
+            <button type="button" class="admin-pill-btn">Under Review (2)</button>
+            <button type="button" class="admin-pill-btn">Approved & Paid (2)</button>
+            <button type="button" class="admin-pill-btn">Draft Claims (1)</button>
+          </div>
+          <div class="admin-filter-group">
+            <input type="search" class="admin-input" placeholder="Search by claim # or OEM..." style="width: 240px;">
+          </div>
+        </div>
+
+        <!-- Claims Table -->
+        <section class="admin-card" style="padding: 0; overflow: hidden;">
+          <div class="admin-table-wrapper" style="border: none;">
+            <table class="admin-table" aria-label="Warranty Claims Table">
+              <thead>
+                <tr>
+                  <th scope="col">Claim ID & Date</th>
+                  <th scope="col">Coach & Chassis VIN</th>
+                  <th scope="col">OEM Provider & Policy</th>
+                  <th scope="col">Claimed Service Item</th>
+                  <th scope="col">Claim Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>#CLM-8910</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">Oct 05, 2026</div>
+                  </td>
+                  <td>
+                    <div>2024 Grand Tourer Elite</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">4UZAA2FC7NC981024</div>
+                  </td>
+                  <td>
+                    <strong>Freightliner Custom Chassis</strong>
+                    <div style="font-size: 0.74rem; color: var(--color-text-muted);">Policy #FLC-44901 (OEM 3-Yr)</div>
+                  </td>
+                  <td>
+                    <div>Electronic Ride Height Sensor Assembly</div>
+                    <div style="font-size: 0.74rem; color: var(--color-text-light);">Pre-Auth Code: #PA-8812</div>
+                  </td>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-text-main);">$1,480.00</td>
+                  <td>
+                    <span class="admin-status-badge status-review"><span class="admin-badge-dot"></span>Under OEM Review</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-table-action" data-modal-target="claim-details-modal">Details</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>#CLM-8842</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">Oct 03, 2026</div>
+                  </td>
+                  <td>
+                    <div>2021 Tiffin Phaeton 40IH</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">1F66F5DY5M0A34821</div>
+                  </td>
+                  <td>
+                    <strong>Aqua-Hot Factory Warranty</strong>
+                    <div style="font-size: 0.74rem; color: var(--color-text-muted);">Policy #AH-99210 (Extended)</div>
+                  </td>
+                  <td>
+                    <div>Aqua-Hot 450D Control Board Replacement</div>
+                    <div style="font-size: 0.74rem; color: var(--color-text-light);">Pre-Auth Code: #PA-8740</div>
+                  </td>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-text-main);">$890.00</td>
+                  <td>
+                    <span class="admin-status-badge status-review"><span class="admin-badge-dot"></span>Under OEM Review</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-table-action" data-modal-target="claim-details-modal">Details</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>#CLM-8760</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">Sep 28, 2026</div>
+                  </td>
+                  <td>
+                    <div>2022 Newmar Dutch Star</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">4UZAC2FC8NC654210</div>
+                  </td>
+                  <td>
+                    <strong>Cummins Power Generation</strong>
+                    <div style="font-size: 0.74rem; color: var(--color-text-muted);">Policy #CUM-0981 (5-Yr Engine)</div>
+                  </td>
+                  <td>
+                    <div>Exhaust Manifold Gasket & EGR Valve</div>
+                    <div style="font-size: 0.74rem; color: var(--color-text-light);">Approved Auth: #CUM-OK-490</div>
+                  </td>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-success);">$3,240.00</td>
+                  <td>
+                    <span class="admin-status-badge status-completed"><span class="admin-badge-dot"></span>Approved & Reimbursed</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-table-action" data-modal-target="claim-details-modal">Settlement</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>#CLM-8692</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">Sep 19, 2026</div>
+                  </td>
+                  <td>
+                    <div>2023 Winnebago Navion 24D</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">WD3PF4CC7NP908124</div>
+                  </td>
+                  <td>
+                    <strong>Mercedes-Benz Sprinter OEM</strong>
+                    <div style="font-size: 0.74rem; color: var(--color-text-muted);">Policy #MB-78012 (Powertrain)</div>
+                  </td>
+                  <td>
+                    <div>NOx Sensor Bank 1 Replacement & Software Flash</div>
+                    <div style="font-size: 0.74rem; color: var(--color-text-light);">Approved Auth: #MB-AUTH-112</div>
+                  </td>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-success);">$1,120.00</td>
+                  <td>
+                    <span class="admin-status-badge status-completed"><span class="admin-badge-dot"></span>Approved & Reimbursed</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-table-action" data-modal-target="claim-details-modal">Settlement</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>#CLM-8610</strong>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-accent);">Sep 10, 2026</div>
+                  </td>
+                  <td>
+                    <div>2022 Jayco Precept 34G</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--color-text-light);">1F66F5DY8M0A19042</div>
+                  </td>
+                  <td>
+                    <strong>Dicor Seal Systems OEM</strong>
+                    <div style="font-size: 0.74rem; color: var(--color-text-muted);">Policy #DIC-3341 (Membrane 10-Yr)</div>
+                  </td>
+                  <td>
+                    <div>Forward Cap Roof Joint Factory Reseal</div>
+                    <div style="font-size: 0.74rem; color: var(--color-text-light);">Drafting claim documentation</div>
+                  </td>
+                  <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-text-main);">$840.00</td>
+                  <td>
+                    <span class="admin-status-badge status-new"><span class="admin-badge-dot"></span>Draft Claim</span>
+                  </td>
+                  <td>
+                    <button type="button" class="btn-table-action" data-modal-target="add-claim-modal">Submit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Submit Claim Modal -->
+  <div class="admin-modal-backdrop" id="add-claim-modal" role="dialog" aria-modal="true" aria-labelledby="add-claim-title">
+    <div class="admin-modal-window">
+      <div class="admin-modal-head">
+        <h2 class="admin-modal-title" id="add-claim-title">Submit OEM Warranty Claim</h2>
+        <button type="button" class="admin-modal-close" data-modal-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="admin-modal-body">
+        <div class="admin-form-grid-2">
+          <div class="admin-form-group">
+            <label class="admin-label" for="clm-oem">OEM / Warranty Carrier</label>
+            <select id="clm-oem" class="admin-select" required>
+              <option value="Freightliner">Freightliner Custom Chassis (FCCC)</option>
+              <option value="Cummins">Cummins Power Generation</option>
+              <option value="Aqua-Hot">Aqua-Hot / Airxcel Heating</option>
+              <option value="Mercedes-Benz">Mercedes-Benz Vans USA</option>
+              <option value="Ford Commercial">Ford Commercial Fleet Warranty</option>
+              <option value="Dicor">Dicor Products Roof Systems</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="clm-policy">Policy / Contract #</label>
+            <input type="text" id="clm-policy" class="admin-input" placeholder="e.g. FLC-99012" style="font-family: var(--font-mono);" required>
+          </div>
+        </div>
+
+        <div class="admin-form-grid-2">
+          <div class="admin-form-group">
+            <label class="admin-label" for="clm-coach">Target RV Coach</label>
+            <select id="clm-coach" class="admin-select" required>
+              <option value="2024 Grand Tourer">2024 Grand Tourer Elite (David Miller)</option>
+              <option value="2023 Fleetwood">2023 Fleetwood Discovery (Sarah Jenkins)</option>
+              <option value="2022 Newmar">2022 Newmar Dutch Star (Robert Vance)</option>
+              <option value="2021 Tiffin">2021 Tiffin Phaeton (Marcus Chen)</option>
+              <option value="2023 Winnebago">2023 Winnebago Navion (Elena Rostova)</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-label" for="clm-amount">Claim Amount ($)</label>
+            <input type="text" id="clm-amount" class="admin-input" placeholder="$1,480.00" required>
+          </div>
+        </div>
+
+        <div class="admin-form-group">
+          <label class="admin-label" for="clm-diag">Factory Diagnostic Justification</label>
+          <textarea id="clm-diag" class="admin-textarea" placeholder="Enter diagnostic trouble codes (DTC), factory fault descriptions, and OEM service bulletin references..."></textarea>
+        </div>
+      </div>
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-admin-secondary" data-modal-close style="color: var(--color-text-main); border-color: var(--color-border);">Cancel</button>
+        <button type="button" class="btn-admin-primary" data-modal-close>Transmit Claim to OEM</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Claim Details Modal -->
+  <div class="admin-modal-backdrop" id="claim-details-modal" role="dialog" aria-modal="true" aria-labelledby="claim-view-title">
+    <div class="admin-modal-window">
+      <div class="admin-modal-head">
+        <h2 class="admin-modal-title" id="claim-view-title">Warranty Claim Adjudication</h2>
+        <button type="button" class="admin-modal-close" data-modal-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="admin-modal-body">
+        <div style="background: var(--color-surface-secondary); padding: 14px; border-radius: var(--border-radius-md); display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Carrier:</span>
+            <strong>Freightliner Custom Chassis</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Pre-Authorization:</span>
+            <strong style="font-family: var(--font-mono); color: var(--color-accent);">#PA-8812</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="font-size: 0.8rem; color: var(--color-text-muted);">Adjudication Status:</span>
+            <span class="admin-status-badge status-review">Factory Reviewing Diagnostic Telemetry</span>
+          </div>
+        </div>
+        <p style="font-size: 0.84rem; color: var(--color-text-muted); margin: 0;">
+          All required high-resolution inspection photos, digital ride height calibration logs, and technician work order forms were transmitted to Freightliner FCCC Warranty Division on Oct 05, 2026.
+        </p>
+      </div>
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-admin-secondary" data-modal-close style="color: var(--color-text-main); border-color: var(--color-border);">Close</button>
+        <button type="button" class="btn-admin-primary" data-modal-close>Download Carrier Packet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div class="admin-modal-backdrop" id="logout-modal" role="dialog" aria-modal="true" aria-labelledby="logout-title">
+    <div class="admin-modal-window" style="max-width: 440px;">
+      <div class="admin-modal-head">
+        <h2 class="admin-modal-title" id="logout-title">Confirm Logout</h2>
+        <button type="button" class="admin-modal-close" data-modal-close aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="admin-modal-body">
+        <p style="margin: 0; color: var(--color-text-muted);">
+          Are you sure you want to end your ROADREADY Admin Operations session?
+        </p>
+      </div>
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-admin-secondary" data-modal-close style="color: var(--color-text-main); border-color: var(--color-border);">Cancel</button>
+        <a href="../login.html" class="btn-admin-primary" style="background: var(--color-danger); color: #FFFFFF;">Sign Out</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

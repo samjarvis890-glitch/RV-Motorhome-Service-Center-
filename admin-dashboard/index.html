@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Service Operations — ROADREADY RV SERVICE Admin</title>
+  <meta name="description" content="Operations dashboard for RoadReady RV Service staff to manage incoming service requests, technician bay allocations, appointments, and coach maintenance.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master & Admin Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Skip Navigation -->
+  <a href="#admin-main-content" class="skip-link">Skip to operations content</a>
+
+  <!-- Mobile Off-Canvas Drawer Backdrop -->
+  <div class="admin-sidebar-backdrop" id="admin-sidebar-backdrop" aria-hidden="true"></div>
+
+  <div class="admin-layout">
+
+    <!-- ======================================================================
+         1. ADMIN SIDEBAR (Desktop 260px, Mobile/Tablet Off-Canvas Drawer)
+         ====================================================================== -->
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin Navigation Sidebar">
+      
+      <!-- Brand Header -->
+      <div class="admin-sidebar-header">
+        <a href="index.html" class="admin-brand-link" aria-label="RoadReady Admin Home">
+          <img src="../assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="admin-brand-logo logo-light-theme" width="160" height="28">
+          <img src="../assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="admin-brand-logo logo-dark-theme" width="160" height="28">
+          <span class="admin-brand-badge">ROADREADY ADMIN</span>
+        </a>
+        <button type="button" class="admin-sidebar-close" aria-label="Close navigation sidebar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Menu Groups -->
+      <nav class="admin-nav-container">
+        
+        <!-- Group 1: OPERATIONS -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Operations</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="index.html" class="admin-nav-link active" aria-current="page">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  <span>Dashboard</span>
+                </span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="service-requests.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  <span>Service Requests</span>
+                </span>
+                <span class="admin-nav-badge badge-accent">4</span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="appointments.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>Appointments</span>
+                </span>
+                <span class="admin-nav-badge badge-success">3 Today</span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="rv-owners.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span>RV Owners</span>
+                </span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="rv-records.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                  <span>RV Records</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 2: SERVICE MANAGEMENT -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Service Management</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="maintenance.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                  </svg>
+                  <span>Maintenance</span>
+                </span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="service-types.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                  <span>Service Types</span>
+                </span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="technicians.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
+                  </svg>
+                  <span>Technicians</span>
+                </span>
+                <span class="admin-nav-badge">6 Bays</span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="warranty.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span>Warranty</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 3: COMMUNICATION -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Communication</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="messages.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span>Messages</span>
+                </span>
+                <span class="admin-nav-badge badge-accent">1</span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="contact-requests.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Contact Requests</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 4: DOCUMENTS -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Documents</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="documents.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  <span>Documents</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 5: BUSINESS -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">Business</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="service-areas.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Service Areas</span>
+                </span>
+              </a>
+            </li>
+            <li class="admin-nav-item">
+              <a href="reports.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                  <span>Reports</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 6: SYSTEM -->
+        <div class="admin-nav-group">
+          <div class="admin-group-title">System</div>
+          <ul class="admin-nav-list">
+            <li class="admin-nav-item">
+              <a href="settings.html" class="admin-nav-link">
+                <span class="admin-link-content">
+                  <svg class="admin-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                  <span>Settings</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="admin-sidebar-footer">
+        <a href="../index.html" class="admin-footer-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Website</span>
+        </a>
+        <a href="../dashboard/index.html" class="admin-footer-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Owner Portal</span>
+        </a>
+        <button type="button" class="admin-footer-link link-logout" data-modal-target="logout-modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+          <span>Logout</span>
+        </button>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================================
+         2. MAIN ADMIN WORKSPACE
+         ====================================================================== -->
+    <div class="admin-workspace">
+
+      <!-- Admin Topbar -->
+      <header class="admin-topbar" role="banner">
+        
+        <!-- Topbar Left: Mobile Drawer Trigger & Live Search -->
+        <div class="admin-topbar-left">
+          <button type="button" class="admin-drawer-toggle" aria-label="Open Navigation Sidebar" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+
+          <div class="admin-search-box">
+            <svg class="admin-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" class="admin-search-input" placeholder="Search owners, RVs, requests, work orders..." aria-label="Search admin portal">
+            <kbd class="admin-search-shortcut">⌘K</kbd>
+          </div>
+        </div>
+
+        <!-- Topbar Right: Theme, RTL, Notifications, Profile -->
+        <div class="admin-topbar-right">
+          
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="admin-topbar-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- RTL Direction Toggle -->
+          <button type="button" class="admin-topbar-btn rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)" title="Toggle RTL / LTR">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 3 21 3 21 8"></polyline>
+              <line x1="4" y1="20" x2="21" y2="3"></line>
+              <polyline points="21 16 21 21 16 21"></polyline>
+              <line x1="15" y1="15" x2="21" y2="21"></line>
+              <line x1="4" y1="4" x2="9" y2="9"></line>
+            </svg>
+          </button>
+
+          <!-- Notifications Dropdown -->
+          <div class="admin-dropdown-wrapper">
+            <button type="button" class="admin-topbar-btn admin-dropdown-trigger" aria-label="View Operational Alerts" aria-expanded="false">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span class="admin-notif-badge" aria-label="2 alerts"></span>
+            </button>
+
+            <div class="admin-dropdown-menu" role="menu">
+              <div class="admin-dropdown-header">
+                <span class="admin-dropdown-title">Operations Alerts</span>
+                <span class="admin-nav-badge badge-accent">2 New</span>
+              </div>
+              <a href="service-requests.html" class="admin-notif-item">
+                <span class="admin-notif-dot"></span>
+                <div>
+                  <div><strong>New Request:</strong> Work Order #RR-8902 submitted for 45-Pt Chassis Audit.</div>
+                  <div class="admin-notif-meta">10 mins ago • Online Booking</div>
+                </div>
+              </a>
+              <a href="appointments.html" class="admin-notif-item">
+                <span class="admin-notif-dot" style="background: var(--color-success);"></span>
+                <div>
+                  <div><strong>Bay Ready:</strong> Central Bay #4 completed 100-Hr Generator inspection.</div>
+                  <div class="admin-notif-meta">45 mins ago • Bay Ops</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Admin Profile Dropdown -->
+          <div class="admin-dropdown-wrapper">
+            <button type="button" class="admin-profile-trigger" aria-label="Open Admin Menu" aria-expanded="false">
+              <div class="admin-avatar" aria-hidden="true">RA</div>
+              <div class="admin-profile-meta">
+                <span class="admin-profile-name">ROADREADY ADMIN</span>
+                <span class="admin-profile-role">Operations Supervisor</span>
+              </div>
+              <svg class="admin-profile-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            <div class="admin-dropdown-menu admin-profile-menu" role="menu">
+              <div class="admin-dropdown-header">
+                <div class="admin-profile-name">ROADREADY ADMIN</div>
+                <div class="admin-profile-role">Facility ID: CENTRAL-BAY-01</div>
+              </div>
+              <a href="settings.html" class="admin-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                <span>System Configuration</span>
+              </a>
+              <a href="reports.html" class="admin-menu-item" role="menuitem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span>Audit & Metrics</span>
+              </a>
+              <div style="height: 1px; background: var(--color-border-subtle); margin: 4px 0;"></div>
+              <button type="button" class="admin-menu-item" data-modal-target="logout-modal" style="color: var(--color-danger);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- Main Operational Content Workspace -->
+      <main class="admin-main-content" id="admin-main-content">
+
+        <!-- ==================================================================
+             SECTION: PAGE HEADING & CONTEXT
+             ================================================================== -->
+        <div class="admin-page-header">
+          <div class="admin-page-title-group">
+            <span class="admin-pretitle">OPERATIONS OVERVIEW</span>
+            <h1 class="admin-page-title">Service Operations</h1>
+            <p class="admin-page-subtitle">
+              Keep today's RV service activity organized, visible, and ready for the next step.
+            </p>
+          </div>
+          <div class="admin-header-actions">
+            <a href="service-requests.html" class="btn-admin-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+              <span>New Work Order</span>
+            </a>
+            <a href="appointments.html" class="btn-table-action" style="min-height: 44px; padding: 0 16px;">
+              <span>Bay Schedule</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION: OPERATIONAL STATUS BANNER
+             ================================================================== -->
+        <section class="admin-status-banner" aria-labelledby="banner-heading">
+          <div class="admin-banner-info">
+            <div class="admin-banner-pill">
+              <span class="admin-banner-dot" aria-hidden="true"></span>
+              <span>Central Bay Operations • Telemetry Active</span>
+            </div>
+            <h2 class="admin-banner-headline" id="banner-heading">KEEP EVERY SERVICE MOVING.</h2>
+            <p class="admin-banner-lead">
+              Review incoming requests, appointments, maintenance activity, and owner communication from one workspace.
+            </p>
+          </div>
+          <div class="admin-banner-actions">
+            <a href="service-requests.html" class="btn-admin-primary">
+              <span>VIEW SERVICE REQUESTS</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <a href="appointments.html" class="btn-admin-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>VIEW APPOINTMENTS</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION: KPI / OPERATIONS SUMMARY (4 BLOCKS)
+             ================================================================== -->
+        <section class="admin-kpi-grid" aria-label="Operations Summary">
+          
+          <!-- KPI 1: OPEN REQUESTS -->
+          <article class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">Open Requests</span>
+              <div class="admin-kpi-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">4</div>
+            <p class="admin-kpi-desc">Active work orders awaiting triage or bay assignment.</p>
+          </article>
+
+          <!-- KPI 2: TODAY'S APPOINTMENTS -->
+          <article class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">Today's Appointments</span>
+              <div class="admin-kpi-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">3</div>
+            <p class="admin-kpi-desc">Scheduled drop-offs and certified inspections today.</p>
+          </article>
+
+          <!-- KPI 3: IN SERVICE -->
+          <article class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">In Service</span>
+              <div class="admin-kpi-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">2</div>
+            <p class="admin-kpi-desc">Coaches currently staged in active certified repair bays.</p>
+          </article>
+
+          <!-- KPI 4: PENDING ACTIONS -->
+          <article class="admin-kpi-card">
+            <div class="admin-kpi-head">
+              <span class="admin-kpi-label">Pending Actions</span>
+              <div class="admin-kpi-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+            </div>
+            <div class="admin-kpi-value">3</div>
+            <p class="admin-kpi-desc">Sign-offs, owner message replies, and parts reviews.</p>
+          </article>
+
+        </section>
+
+        <!-- ==================================================================
+             SECTION: MAIN OPERATIONAL 2-COLUMN GRID (2/3 + 1/3)
+             ================================================================== -->
+        <div class="admin-grid-2col">
+          
+          <!-- LEFT COLUMN (2/3) -->
+          <div class="admin-col-main">
+            
+            <!-- 1. RECENT SERVICE REQUESTS TABLE -->
+            <section class="admin-card" aria-labelledby="recent-requests-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="recent-requests-title">RECENT SERVICE REQUESTS</h2>
+                  <p class="admin-card-subtitle">Active requests from certified coach owners</p>
+                </div>
+                <a href="service-requests.html" class="admin-card-action">
+                  <span>VIEW ALL REQUESTS</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Table Container -->
+              <div class="admin-table-wrapper">
+                <table class="admin-table" aria-label="Recent Service Requests">
+                  <thead>
+                    <tr>
+                      <th scope="col">Request ID</th>
+                      <th scope="col">Owner</th>
+                      <th scope="col">RV Unit</th>
+                      <th scope="col">Service Operation</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-accent);">#RR-8902</td>
+                      <td><strong>David Miller</strong></td>
+                      <td>2024 Grand Tourer Elite</td>
+                      <td>45-Pt Chassis & Hydraulic Audit</td>
+                      <td>
+                        <span class="admin-status-badge status-new">
+                          <span class="admin-badge-dot"></span>
+                          <span>New</span>
+                        </span>
+                      </td>
+                      <td>
+                        <a href="service-requests.html" class="btn-table-action">Review</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-accent);">#RR-8842</td>
+                      <td><strong>Sarah Jenkins</strong></td>
+                      <td>2023 Fleetwood Discovery</td>
+                      <td>Lithium Inverter & Solar Staging</td>
+                      <td>
+                        <span class="admin-status-badge status-scheduled">
+                          <span class="admin-badge-dot"></span>
+                          <span>Scheduled</span>
+                        </span>
+                      </td>
+                      <td>
+                        <a href="service-requests.html" class="btn-table-action">Manage Bay</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-accent);">#RR-8721</td>
+                      <td><strong>Robert Vance</strong></td>
+                      <td>2022 Newmar Dutch Star</td>
+                      <td>Dicor Lap Seal & Skylight Reseal</td>
+                      <td>
+                        <span class="admin-status-badge status-inservice">
+                          <span class="admin-badge-dot"></span>
+                          <span>In Service</span>
+                        </span>
+                      </td>
+                      <td>
+                        <a href="service-requests.html" class="btn-table-action">Tech Bay 2</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-family: var(--font-mono); font-weight: 700; color: var(--color-accent);">#RR-8610</td>
+                      <td><strong>Marcus Chen</strong></td>
+                      <td>2021 Tiffin Phaeton</td>
+                      <td>Aqua-Hot Hydronic Fluid Flush</td>
+                      <td>
+                        <span class="admin-status-badge status-review">
+                          <span class="admin-badge-dot"></span>
+                          <span>Reviewing</span>
+                        </span>
+                      </td>
+                      <td>
+                        <a href="service-requests.html" class="btn-table-action">Evaluate</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- 2. SERVICE PIPELINE -->
+            <section class="admin-card" aria-labelledby="pipeline-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="pipeline-title">SERVICE PIPELINE</h2>
+                  <p class="admin-card-subtitle">Real-time workflow distribution across facility bays</p>
+                </div>
+              </div>
+
+              <!-- 6 Stages Track -->
+              <div class="admin-pipeline-track">
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">New</span>
+                  <span class="pipeline-stage-count" style="color: var(--color-accent);">1</span>
+                  <span class="pipeline-stage-meta">Awaiting Triage</span>
+                </div>
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">Reviewing</span>
+                  <span class="pipeline-stage-count" style="color: var(--color-info);">1</span>
+                  <span class="pipeline-stage-meta">Parts Staging</span>
+                </div>
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">Scheduled</span>
+                  <span class="pipeline-stage-count" style="color: var(--color-secondary);">2</span>
+                  <span class="pipeline-stage-meta">Bay Reserved</span>
+                </div>
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">In Service</span>
+                  <span class="pipeline-stage-count" style="color: var(--color-warning);">2</span>
+                  <span class="pipeline-stage-meta">Active Repairs</span>
+                </div>
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">Ready</span>
+                  <span class="pipeline-stage-count" style="color: var(--color-success);">1</span>
+                  <span class="pipeline-stage-meta">QC Certified</span>
+                </div>
+                <div class="admin-pipeline-stage">
+                  <span class="pipeline-stage-name">Completed</span>
+                  <span class="pipeline-stage-count">8</span>
+                  <span class="pipeline-stage-meta">Released This Wk</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- 3. REQUIRES ATTENTION / PENDING ACTIONS -->
+            <section class="admin-card" aria-labelledby="attention-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="attention-title">REQUIRES ATTENTION</h2>
+                  <p class="admin-card-subtitle">Operational items requiring supervisor sign-off or action</p>
+                </div>
+              </div>
+
+              <div class="admin-action-list">
+                
+                <!-- Action Item 1 -->
+                <div class="admin-action-item">
+                  <div class="admin-action-left">
+                    <div class="admin-action-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                      </svg>
+                    </div>
+                    <div class="admin-action-info">
+                      <span class="admin-action-title">Dicor Roof Seal Inspection Sign-off</span>
+                      <span class="admin-action-desc">Bay #2 completed water intrusion test for Winnebago View. Awaiting supervisor certificate generation.</span>
+                    </div>
+                  </div>
+                  <a href="documents.html" class="btn-table-action">Review & Sign</a>
+                </div>
+
+                <!-- Action Item 2 -->
+                <div class="admin-action-item">
+                  <div class="admin-action-left">
+                    <div class="admin-action-icon" style="color: var(--color-warning); background: rgba(217, 130, 43, 0.12);">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                    </div>
+                    <div class="admin-action-info">
+                      <span class="admin-action-title">Appointment Confirmation — Nov 18 Bay 4</span>
+                      <span class="admin-action-desc">Owner David Miller requested 08:30 AM drop-off slot. Bay 4 technician allocation pending confirmation.</span>
+                    </div>
+                  </div>
+                  <a href="appointments.html" class="btn-table-action">Confirm Bay</a>
+                </div>
+
+                <!-- Action Item 3 -->
+                <div class="admin-action-item">
+                  <div class="admin-action-left">
+                    <div class="admin-action-icon" style="color: var(--color-info); background: rgba(53, 109, 130, 0.12);">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                      </svg>
+                    </div>
+                    <div class="admin-action-info">
+                      <span class="admin-action-title">Owner Message Inquiry</span>
+                      <span class="admin-action-desc">Robert Vance sent inquiry regarding 800Ah LiFePO4 battery staging compatibility.</span>
+                    </div>
+                  </div>
+                  <a href="messages.html" class="btn-table-action">Reply</a>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+          <!-- RIGHT COLUMN (1/3) -->
+          <div class="admin-col-side">
+            
+            <!-- 1. TODAY'S SCHEDULE -->
+            <section class="admin-card" aria-labelledby="schedule-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="schedule-title">TODAY'S SCHEDULE</h2>
+                  <p class="admin-card-subtitle">Active bay drop-offs & inspections</p>
+                </div>
+                <a href="appointments.html" class="admin-card-action">
+                  <span>VIEW ALL</span>
+                </a>
+              </div>
+
+              <div class="admin-schedule-list">
+                
+                <div class="admin-schedule-item">
+                  <span class="admin-schedule-time">08:30 AM</span>
+                  <div class="admin-schedule-details">
+                    <span class="admin-schedule-service">45-Point Chassis & Suspension</span>
+                    <span class="admin-schedule-coach">2024 Grand Tourer • Bay #4 (Tech #12)</span>
+                  </div>
+                </div>
+
+                <div class="admin-schedule-item">
+                  <span class="admin-schedule-time">11:00 AM</span>
+                  <div class="admin-schedule-details">
+                    <span class="admin-schedule-service">Aqua-Hot Hydronic Flush</span>
+                    <span class="admin-schedule-coach">2022 Keystone Outback • Bay #2 (Tech #04)</span>
+                  </div>
+                </div>
+
+                <div class="admin-schedule-item">
+                  <span class="admin-schedule-time">02:30 PM</span>
+                  <div class="admin-schedule-details">
+                    <span class="admin-schedule-service">Dicor Lap Seal & Skylight Re-seal</span>
+                    <span class="admin-schedule-coach">2023 Winnebago View • Bay #1 (Tech #08)</span>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- 2. RECENT OWNER MESSAGES -->
+            <section class="admin-card" aria-labelledby="messages-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="messages-title">RECENT OWNER MESSAGES</h2>
+                  <p class="admin-card-subtitle">Direct client communication feed</p>
+                </div>
+                <a href="messages.html" class="admin-card-action">
+                  <span>OPEN INBOX</span>
+                </a>
+              </div>
+
+              <div class="admin-schedule-list">
+                
+                <div class="admin-schedule-item">
+                  <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); margin-top: 5px; flex-shrink: 0;"></div>
+                  <div class="admin-schedule-details">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span class="admin-schedule-service">Robert Vance</span>
+                      <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-light);">15m ago</span>
+                    </div>
+                    <span class="admin-schedule-coach">Inquiring about 800Ah Lithium Bank staging hardware for next week...</span>
+                  </div>
+                </div>
+
+                <div class="admin-schedule-item">
+                  <div style="width: 8px; height: 8px; border-radius: 50%; background: transparent; margin-top: 5px; flex-shrink: 0;"></div>
+                  <div class="admin-schedule-details">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span class="admin-schedule-service">Elena Martinez</span>
+                      <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-light);">1h ago</span>
+                    </div>
+                    <span class="admin-schedule-coach">Confirmed drop-off schedule for Wednesday morning. Thanks!</span>
+                  </div>
+                </div>
+
+                <div class="admin-schedule-item">
+                  <div style="width: 8px; height: 8px; border-radius: 50%; background: transparent; margin-top: 5px; flex-shrink: 0;"></div>
+                  <div class="admin-schedule-details">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span class="admin-schedule-service">Marcus Chen</span>
+                      <span style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-light);">3h ago</span>
+                    </div>
+                    <span class="admin-schedule-coach">Received the annual roof lap seal inspection certificate.</span>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- 3. QUICK ACTIONS BAR -->
+            <section class="admin-card" aria-labelledby="quick-actions-title">
+              <div class="admin-card-header">
+                <div class="admin-card-title-wrap">
+                  <h2 class="admin-card-title" id="quick-actions-title">QUICK ACTIONS</h2>
+                  <p class="admin-card-subtitle">Common operations tasks</p>
+                </div>
+              </div>
+
+              <div class="admin-quick-actions-grid">
+                <a href="service-requests.html" class="admin-quick-tile">
+                  <svg class="admin-quick-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  <span class="admin-quick-label">NEW REQUEST</span>
+                </a>
+                <a href="appointments.html" class="admin-quick-tile">
+                  <svg class="admin-quick-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span class="admin-quick-label">NEW APPOINTMENT</span>
+                </a>
+                <a href="rv-owners.html" class="admin-quick-tile">
+                  <svg class="admin-quick-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                  <span class="admin-quick-label">ADD RV OWNER</span>
+                </a>
+                <a href="maintenance.html" class="admin-quick-tile">
+                  <svg class="admin-quick-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                  </svg>
+                  <span class="admin-quick-label">ADD RECORD</span>
+                </a>
+                <a href="messages.html" class="admin-quick-tile" style="grid-column: span 2;">
+                  <svg class="admin-quick-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <span class="admin-quick-label">OPEN MESSAGES HUB</span>
+                </a>
+              </div>
+            </section>
+
+          </div>
+
+        </div>
+
+      </main>
+
+      <!-- Admin Footer -->
+      <footer style="padding: 20px 36px; border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <span>ROADREADY RV SERVICE • OPERATIONS CENTER</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="settings.html" style="color: var(--color-text-muted); text-decoration: none;">System Status: Normal</a>
+          <span style="color: var(--color-border);">•</span>
+          <a href="reports.html" style="color: var(--color-text-muted); text-decoration: none;">Facility Logs</a>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Logout Confirmation Modal -->
+  <div class="admin-modal-backdrop" id="logout-modal" role="dialog" aria-modal="true" aria-labelledby="logout-title">
+    <div class="admin-modal-window" style="max-width: 440px;">
+      <div class="admin-modal-head">
+        <h3 class="admin-modal-title" id="logout-title">Confirm Sign Out</h3>
+        <button type="button" class="admin-modal-close" data-modal-close aria-label="Close dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(185, 74, 72, 0.12); color: var(--color-danger); display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </div>
+        <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--color-text-main);">Sign Out of Admin Operations?</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">
+          Your current administrator session will be closed safely.
+        </p>
+      </div>
+      <div class="admin-modal-footer">
+        <button type="button" class="btn-table-action" data-modal-close style="flex: 1; justify-content: center;">Cancel</button>
+        <a href="../login.html" class="btn-admin-primary" style="flex: 1; justify-content: center; background: var(--color-danger); color: #FFFFFF;">
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master Admin JavaScript -->
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

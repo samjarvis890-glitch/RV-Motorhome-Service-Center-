@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>ROADREADY RV SERVICE — Road-Readiness Studio & Owner Experience</title>
+  <meta name="description" content="The road starts before you leave. Experience specialist RV & motorhome preparation, living system calibration, and digital service records built for total journey confidence.">
+  <meta name="theme-color" content="#173B35">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/favicon.svg">
+
+  <!-- Google Fonts: Poppins, Inter, Roboto Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ======================================================================
+       GLOBAL MASTER NAVBAR
+       Exact global component shared across the entire website
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="site-container">
+      <nav class="navbar-wrapper" aria-label="Main Navigation">
+        
+        <!-- Brand Logo (Light / Dark Adaptive) -->
+        <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service - Return to homepage">
+          <img src="assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="brand-logo-img logo-light-theme" width="240" height="40">
+          <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="brand-logo-img logo-dark-theme" width="240" height="40">
+        </a>
+
+        <!-- Desktop Navigation Items (1281px+) -->
+        <ul class="navbar-nav-desktop" role="menubar">
+          
+          <!-- Home Dropdown (Active on home2.html) -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link active nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-current="page">
+              <span>Home</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Home Pages">
+              <a href="index.html" class="nav-dropdown-link" role="menuitem">Home 1</a>
+              <a href="home2.html" class="nav-dropdown-link active" role="menuitem">Home 2</a>
+            </div>
+          </li>
+
+          <!-- Services: DIRECT LINK, NO DROPDOWN -->
+          <li class="nav-item" role="none">
+            <a href="services.html" class="nav-link" role="menuitem">Services</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="about.html" class="nav-link" role="menuitem">About</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="service-areas.html" class="nav-link" role="menuitem">Service Areas</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
+          </li>
+
+          <li class="nav-item" role="none">
+            <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+          </li>
+
+          <!-- Owner Portal Dropdown (Strictly 2 items: User Dashboard & Admin Dashboard) -->
+          <li class="nav-item" role="none">
+            <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <span>Owner Portal</span>
+              <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" role="menu" aria-label="Owner Portal Submenu">
+              <a href="dashboard/index.html" class="nav-dropdown-link" role="menuitem">User Dashboard</a>
+              <a href="admin-dashboard/index.html" class="nav-dropdown-link" role="menuitem">Admin Dashboard</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <!-- Navbar Controls & Mobile Triggers -->
+        <div class="navbar-controls">
+          <!-- Dark Mode Toggle Button -->
+          <button type="button" class="control-btn theme-toggle-btn" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
+          <!-- RTL / LTR Toggle Button -->
+          <button type="button" class="control-btn rtl-toggle-btn" aria-label="Toggle Text Direction" title="Toggle RTL / LTR">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+            </svg>
+          </button>
+
+          <!-- Desktop Login Button -->
+          <a href="login.html" class="btn btn-forest btn-sm">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+              <polyline points="10 17 15 12 10 7"></polyline>
+              <line x1="15" y1="12" x2="3" y2="12"></line>
+            </svg>
+            <span>LOGIN</span>
+          </a>
+
+          <!-- Hamburger Button (Visible on <=1280px Tablet & Mobile) -->
+          <button type="button" class="hamburger-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MOBILE & TABLET DRAWER NAVIGATION
+       Contains ALL navigation links with smooth nested accordions
+       ====================================================================== -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo-link" aria-label="RoadReady RV Service">
+        <img src="assets/images/brand/roadready-mark.svg" alt="RoadReady Mark" width="34" height="34">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--color-primary); letter-spacing: 0.05em;">ROADREADY</span>
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <nav class="drawer-nav-list" aria-label="Mobile Menu Links">
+        
+        <!-- Home Collapsible Submenu -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn active expanded" data-submenu-target="drawer-home-sub" aria-expanded="true">
+            <span>Home</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu open" id="drawer-home-sub">
+            <a href="index.html" class="drawer-submenu-link">Home 1</a>
+            <a href="home2.html" class="drawer-submenu-link active">Home 2</a>
+          </div>
+        </div>
+
+        <!-- Services (Direct Link) -->
+        <a href="services.html" class="drawer-nav-link">Services</a>
+        
+        <a href="about.html" class="drawer-nav-link">About</a>
+        <a href="service-areas.html" class="drawer-nav-link">Service Areas</a>
+        <a href="blog.html" class="drawer-nav-link">Blog</a>
+        <a href="contact.html" class="drawer-nav-link">Contact</a>
+        
+        <!-- Owner Portal Collapsible Submenu (Strictly 2 items) -->
+        <div class="drawer-nav-item">
+          <button type="button" class="drawer-accordion-btn" data-submenu-target="drawer-portal-sub" aria-expanded="false">
+            <span>Owner Portal</span>
+            <svg class="drawer-accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="drawer-submenu" id="drawer-portal-sub">
+            <a href="dashboard/index.html" class="drawer-submenu-link">User Dashboard</a>
+            <a href="admin-dashboard/index.html" class="drawer-submenu-link">Admin Dashboard</a>
+          </div>
+        </div>
+
+      </nav>
+
+      <div class="drawer-divider"></div>
+
+      <!-- Drawer Login CTA -->
+      <a href="login.html" class="btn btn-forest drawer-login-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+          <polyline points="10 17 15 12 10 7"></polyline>
+          <line x1="15" y1="12" x2="3" y2="12"></line>
+        </svg>
+        <span>LOGIN</span>
+      </a>
+
+      <!-- Theme and RTL Controls inside drawer -->
+      <div class="drawer-controls-row">
+        <button type="button" class="drawer-control-item theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+          <span class="theme-label-text">Dark Mode</span>
+        </button>
+
+        <button type="button" class="drawer-control-item rtl-toggle-btn" aria-label="Toggle RTL / LTR">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h10M4 18h14M18 9l3 3-3 3"></path>
+          </svg>
+          <span class="rtl-label-text">RTL / LTR</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ======================================================================
+       MAIN CONTENT: EXACTLY 6 UNIQUE EDITORIAL HOMEPAGE SECTIONS
+       Concept: "THE ROAD STARTS BEFORE YOU LEAVE."
+       ====================================================================== -->
+  <main id="main-content">
+
+    <!-- ====================================================================
+         SECTION 1 — HERO
+         Purpose: Introduce the idea of road readiness before service details
+         ==================================================================== -->
+    <section class="site-section home2-hero-section" id="hero" aria-labelledby="home2-hero-title">
+      <div class="site-container">
+        
+        <!-- Editorial Centered Narrative Top -->
+        <div class="home2-hero-header">
+          <div class="eyebrow">ROAD-READINESS STUDIO</div>
+          
+          <h1 class="home2-hero-title" id="home2-hero-title">
+            THE ROAD STARTS <br class="desktop-br">BEFORE YOU LEAVE.
+          </h1>
+
+          <p class="home2-hero-lead">
+            A well-prepared RV gives every mile a little more confidence. From systems and comfort to the details most owners never see, ROADREADY helps you prepare for the journey ahead.
+          </p>
+
+          <div class="home2-hero-actions">
+            <button type="button" class="btn btn-primary" data-modal-target="service-planner-modal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>PREPARE YOUR RV</span>
+            </button>
+
+            <a href="dashboard/index.html" class="btn btn-secondary">
+              <span>EXPLORE OWNER CARE</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Large Panoramic RV Editorial Media Below -->
+        <div class="home2-hero-frame">
+          <img src="assets/images/home2/home2-hero.jpg" alt="Modern luxury Class A motorhome staged at scenic mountain overlook during golden hour sunrise" class="home2-hero-img" width="1160" height="650" loading="eager" fetchpriority="high">
+          
+          <div class="home2-hero-floating-badge">
+            <div class="home2-badge-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div>
+              <div class="home2-badge-title">VERIFIED COACH SYSTEMS</div>
+              <div class="home2-badge-sub">Multi-point chassis, power &amp; habitation staging</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2 — THE MOMENT BEFORE THE MILES
+         Purpose: Emotional transition from home preparation to travel
+         ==================================================================== -->
+    <section class="site-section home2-moment-section" id="moment-before-miles" aria-labelledby="moment-heading">
+      <div class="site-container">
+        <div class="home2-moment-grid">
+          
+          <!-- Large Asymmetrical Editorial Visual (60% width) -->
+          <div class="home2-moment-media">
+            <img src="assets/images/home2/before-the-road.jpg" alt="Luxury motor coach staged in quiet morning courtyard before departure" class="home2-moment-img" width="700" height="525" loading="lazy">
+            <span class="home2-moment-tag">QUIET ASSURANCE BEFORE THE DRIVE</span>
+          </div>
+
+          <!-- Editorial Text Panel (40% width) -->
+          <div class="home2-moment-content">
+            <div class="home2-marker-badge">01</div>
+            
+            <h2 id="moment-heading">THE MOMENT BEFORE THE MILES.</h2>
+            <div class="home2-moment-subtitle">READY BEFORE THE ROAD.</div>
+            
+            <p class="home2-moment-lead">
+              The best road days rarely begin on the highway. They begin with knowing the systems are ready, the essentials are checked and the RV feels prepared for the distance ahead.
+            </p>
+
+            <div class="home2-moment-points">
+              
+              <div class="home2-moment-point">
+                <span class="home2-point-num">01</span>
+                <div class="home2-point-text">
+                  <h3>SYSTEM CALM</h3>
+                  <p>Eliminating uncertainty and guesswork before putting the coach in drive.</p>
+                </div>
+              </div>
+
+              <div class="home2-moment-point">
+                <span class="home2-point-num">02</span>
+                <div class="home2-point-text">
+                  <h3>VERIFIED BAYS</h3>
+                  <p>Chassis fluids, auxiliary battery banks, and plumbing lines tested under load.</p>
+                </div>
+              </div>
+
+              <div class="home2-moment-point">
+                <span class="home2-point-num">03</span>
+                <div class="home2-point-text">
+                  <h3>EFFORTLESS DEPARTURE</h3>
+                  <p>Rolling out smoothly toward mountain passes and open highway horizons.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3 — SIX DETAILS THAT CHANGE THE JOURNEY
+         Purpose: Introduce practical preparation details via numbered editorial blocks
+         ==================================================================== -->
+    <section class="site-section home2-details-section" id="journey-details" aria-labelledby="details-heading">
+      <div class="site-container">
+        
+        <div class="section-header">
+          <div class="eyebrow">CRITICAL COACH SYSTEMS</div>
+          <h2 id="details-heading">SIX DETAILS THAT CHANGE THE JOURNEY.</h2>
+          <p>
+            Small calibrations in vital vehicle systems make the difference between sudden road delays and seamless cross-country travel.
+          </p>
+        </div>
+
+        <!-- 6 Compact Editorial Feature Blocks (Clean 3x2 Grid, Strictly Aligned) -->
+        <div class="home2-details-grid">
+          
+          <!-- Block 1: Power -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">01</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">POWER</h3>
+            <p class="home2-detail-desc">
+              Know your electrical system before departure. Comprehensive 30/50A shore power balance, pure-sine inverter diagnostics, and lithium battery cell balancing.
+            </p>
+            <div class="home2-detail-footer">
+              <span>Electrical Calibrations</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Block 2: Water -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">02</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">WATER</h3>
+            <p class="home2-detail-desc">
+              Make sure fresh-water and waste systems are ready. Pressurized line integrity tests, quiet pump check-valves, and holding tank gate seal verification.
+            </p>
+            <div class="home2-detail-footer">
+              <span>Plumbing Verification</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Block 3: Climate -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">03</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">CLIMATE</h3>
+            <p class="home2-detail-desc">
+              Check the systems responsible for cabin comfort. Rooftop heat pump delta-T cooling drops, hydronic heating loops, and LP gas furnace ignition safety.
+            </p>
+            <div class="home2-detail-footer">
+              <span>HVAC Performance</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Block 4: Exterior -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">04</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">EXTERIOR</h3>
+            <p class="home2-detail-desc">
+              Look closely at seals, roof areas and exterior condition. Dicor self-leveling lap sealant renewal, slide-out topper tensioning, and weatherstrip adhesion.
+            </p>
+            <div class="home2-detail-footer">
+              <span>Roof &amp; Shell Care</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Block 5: Safety -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">05</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">SAFETY</h3>
+            <p class="home2-detail-desc">
+              Review the details that matter before the first mile. DOT tire date age audits, wireless TPMS sensor pairing, lug nut torque specs, and breakaway brakes.
+            </p>
+            <div class="home2-detail-footer">
+              <span>Pre-Departure Audit</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Block 6: Records -->
+          <article class="home2-detail-card">
+            <div class="home2-detail-header">
+              <span class="home2-detail-num">06</span>
+              <div class="home2-detail-icon-wrap" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+            </div>
+            <h3 class="home2-detail-title">RECORDS</h3>
+            <p class="home2-detail-desc">
+              Keep service history easy to understand. Timestamped digital maintenance logs, manufacturer recall status, and verified appliance component warranties.
+            </p>
+            <div class="home2-detail-footer">
+              <span>Owner Logbook</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4 — INSIDE THE RV
+         Purpose: Show that RV care is also about living comfort and habitation
+         ==================================================================== -->
+    <section class="site-section home2-interior-section" id="interior-habitation" aria-labelledby="interior-heading">
+      <div class="site-container">
+        <div class="home2-interior-grid">
+          
+          <!-- Large High-Quality RV Interior Visual Left -->
+          <div class="home2-interior-media">
+            <img src="assets/images/home2/rv-interior.jpg" alt="Modern luxury motorcoach interior living space with oak cabinetry, warm lighting and panoramic scenic view" class="home2-interior-img" width="700" height="525" loading="lazy">
+            
+            <div class="home2-interior-overlay-pill">
+              <span>HABITATION CRAFTSMANSHIP</span>
+              <span class="tag">BALANCED LIVING SYSTEMS</span>
+            </div>
+          </div>
+
+          <!-- Vertical Editorial Panel Right -->
+          <div class="home2-interior-panel">
+            <div class="eyebrow">HABITATION &amp; LIVING SYSTEMS</div>
+            <h2 id="interior-heading">CARE FOR THE SPACE <br class="desktop-br">BETWEEN THE MILES.</h2>
+            
+            <p class="home2-interior-lead">
+              An RV is not just mechanical transport—it is your private living sanctuary on the open road. When sleeping quarters, galley utilities, climate, and lighting operate in harmony, extended travel feels like second nature.
+            </p>
+
+            <!-- 4 Refined Habitation Comfort Features -->
+            <div class="home2-interior-features">
+              
+              <div class="home2-feature-item">
+                <div class="home2-feature-head">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 4v16"></path>
+                    <path d="M2 8h18a2 2 0 0 1 2 2v10"></path>
+                    <path d="M2 17h20"></path>
+                    <path d="M6 8v9"></path>
+                  </svg>
+                  <h3>Sleeping Comfort</h3>
+                </div>
+                <p>Zoned climate regulation, silent hydronic warmth, and quiet ducted airflow.</p>
+              </div>
+
+              <div class="home2-feature-item">
+                <div class="home2-feature-head">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <h3>Galley Utilities</h3>
+                </div>
+                <p>Propane cooktop pressure, convection microwave, and absorption fridge balance.</p>
+              </div>
+
+              <div class="home2-feature-item">
+                <div class="home2-feature-head">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                  </svg>
+                  <h3>Ambient Lighting</h3>
+                </div>
+                <p>12V interior LED distribution, pure-sine AC inverted circuits, and USB banks.</p>
+              </div>
+
+              <div class="home2-feature-item">
+                <div class="home2-feature-head">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                  <h3>Slide-Out Fit</h3>
+                </div>
+                <p>Synchronized slide mechanism travel, cabinetry latching, and dual roller shades.</p>
+              </div>
+
+            </div>
+
+            <a href="services.html#hvac-appliances" class="btn btn-forest">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+              <span>EXPLORE LIVING SPACE CARE</span>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5 — YOUR ROADREADY RECORD
+         Purpose: Introduce owner portal via a visual maintenance record timeline
+         ==================================================================== -->
+    <section class="site-section home2-record-section" id="roadready-records" aria-labelledby="record-heading">
+      <div class="site-container">
+        <div class="home2-record-grid">
+          
+          <!-- Narrative & Vertical Visual Timeline Left -->
+          <div class="home2-record-content">
+            <div class="eyebrow">DIGITAL MAINTENANCE TIMELINE</div>
+            <h2 id="record-heading">KNOW YOUR RV. <br class="desktop-br">KNOW ITS HISTORY.</h2>
+            
+            <p class="home2-record-lead">
+              Service becomes easier to manage when the important details stay connected to the vehicle they belong to. Track every inspection, calibration, and seasonal transition in one structured vehicle logbook.
+            </p>
+
+            <div class="home2-timeline-list" role="list" aria-label="Vehicle Maintenance Timeline">
+              
+              <!-- Timeline Item 1 -->
+              <div class="home2-timeline-item" role="listitem">
+                <div class="home2-timeline-bullet">
+                  <div class="home2-timeline-circle">01</div>
+                  <div class="home2-timeline-line"></div>
+                </div>
+                <div class="home2-timeline-body">
+                  <div class="home2-timeline-header">
+                    <h3>SERVICE RECORD</h3>
+                    <span class="home2-timeline-tag">ROUTINE SYSTEM REVIEW</span>
+                  </div>
+                  <p class="home2-timeline-desc">Chassis fluids, generator oil, brake pad thickness, and differential fluid analysis verified in Bay 2.</p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 2 -->
+              <div class="home2-timeline-item" role="listitem">
+                <div class="home2-timeline-bullet">
+                  <div class="home2-timeline-circle">02</div>
+                  <div class="home2-timeline-line"></div>
+                </div>
+                <div class="home2-timeline-body">
+                  <div class="home2-timeline-header">
+                    <h3>SYSTEM CHECK</h3>
+                    <span class="home2-timeline-tag">ELECTRICAL &amp; INVERTER</span>
+                  </div>
+                  <p class="home2-timeline-desc">50-Amp automatic transfer switch calibration, pure-sine inverter firmware audit, and lithium health check.</p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 3 -->
+              <div class="home2-timeline-item" role="listitem">
+                <div class="home2-timeline-bullet">
+                  <div class="home2-timeline-circle">03</div>
+                  <div class="home2-timeline-line"></div>
+                </div>
+                <div class="home2-timeline-body">
+                  <div class="home2-timeline-header">
+                    <h3>SEASONAL CARE</h3>
+                    <span class="home2-timeline-tag">WINTER PREPARATION</span>
+                  </div>
+                  <p class="home2-timeline-desc">Plumbing dry-air blowout, non-toxic glycol loop purge, water heater bypass, and chassis storage staging.</p>
+                </div>
+              </div>
+
+              <!-- Timeline Item 4 -->
+              <div class="home2-timeline-item" role="listitem">
+                <div class="home2-timeline-bullet">
+                  <div class="home2-timeline-circle">04</div>
+                </div>
+                <div class="home2-timeline-body">
+                  <div class="home2-timeline-header">
+                    <h3>ROAD CHECK</h3>
+                    <span class="home2-timeline-tag">PRE-TRIP READINESS</span>
+                  </div>
+                  <p class="home2-timeline-desc">DOT tire date verification, wireless TPMS sensor pairing, and Dicor roof lap sealant water-seal certification.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="dashboard/index.html" class="btn btn-forest">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+              <span>VIEW OWNER DASHBOARD</span>
+            </a>
+
+          </div>
+
+          <!-- High-Resolution Timeline / Record Visual Mockup Right -->
+          <div class="home2-record-media">
+            <img src="assets/images/home2/roadready-record.jpg" alt="RoadReady digital maintenance logbook interface showing verified vehicle history timeline" class="home2-record-img" width="700" height="535" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6 — FINAL JOURNEY CTA
+         Purpose: Finish with emotion, confidence, and travel readiness
+         ==================================================================== -->
+    <section class="site-section home2-cta-section" id="final-departure" aria-labelledby="cta-heading">
+      <div class="site-container">
+        
+        <div class="home2-cta-banner">
+          <img src="assets/images/home2/ready-for-road.jpg" alt="Luxury motorcoach cruising along scenic alpine highway in early morning light" class="home2-cta-bg-img" width="1200" height="600" loading="lazy">
+          
+          <div class="home2-cta-overlay">
+            <div class="eyebrow">THE NEXT DEPARTURE</div>
+            <h2 class="home2-cta-title" id="cta-heading">READY WHEN <br class="desktop-br">THE ROAD CALLS.</h2>
+            <p class="home2-cta-desc">
+              Take care of the details now, so the next departure can feel simple. Whether heading out for the weekend or crossing the continent, travel with total peace of mind.
+            </p>
+
+            <div class="home2-cta-actions">
+              <button type="button" class="btn btn-primary" data-modal-target="service-planner-modal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="12" y1="18" x2="12" y2="12"></line>
+                  <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+                <span>START YOUR SERVICE REQUEST</span>
+              </button>
+
+              <a href="services.html" class="btn btn-secondary">
+                <span>VISIT OUR SERVICES</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       GLOBAL MASTER FOOTER
+       Exact global component shared across the entire website
+       ====================================================================== -->
+  <footer class="site-footer" id="site-footer">
+    <div class="site-container">
+      
+      <div class="footer-main-grid">
+        
+        <!-- Column 1: Brand & Tagline -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-brand-logo-link" aria-label="RoadReady RV Service">
+            <img src="assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="footer-brand-logo" width="220" height="38">
+          </a>
+          <div class="footer-tagline">KEEP THE JOURNEY MOVING.</div>
+          <p class="footer-desc">
+            Specialist care for motorhomes and towables. Dedicated bays for drivetrain, electrical banks, plumbing, HVAC, and weatherproofing.
+          </p>
+        </div>
+
+        <!-- Column 2: Services -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">SERVICES</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html#maintenance" class="footer-link">RV Maintenance</a></li>
+            <li><a href="services.html#winterization" class="footer-link">Winterization</a></li>
+            <li><a href="services.html#electrical-plumbing" class="footer-link">Electrical &amp; Plumbing</a></li>
+            <li><a href="services.html#hvac-appliances" class="footer-link">HVAC &amp; Appliances</a></li>
+            <li><a href="services.html#roof-exterior" class="footer-link">Roof &amp; Exterior</a></li>
+            <li><a href="services.html#pre-trip" class="footer-link">Pre-Trip Inspection</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Owner Portal -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">OWNER PORTAL</h3>
+          <ul class="footer-links-list">
+            <li><a href="dashboard/index.html" class="footer-link">Owner Dashboard</a></li>
+            <li><a href="dashboard/index.html#appointments" class="footer-link">Service Appointments</a></li>
+            <li><a href="dashboard/index.html#history" class="footer-link">Maintenance History</a></li>
+            <li><a href="dashboard/index.html#warranty" class="footer-link">Warranty Status</a></li>
+            <li><a href="dashboard/index.html#messages" class="footer-link">Messages</a></li>
+            <li><a href="dashboard/profile.html" class="footer-link">Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">COMPANY</h3>
+          <ul class="footer-links-list">
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="service-areas.html" class="footer-link">Service Areas</a></li>
+            <li><a href="blog.html" class="footer-link">Blog</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+            <li><a href="contact.html#service-request" class="footer-link">Service Request</a></li>
+            <li><a href="dashboard/index.html" class="footer-link">Owner Portal</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar (Only Copyright, No Duplicate Theme/RTL Controls) -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copyright">
+          © 2026 ROADREADY RV SERVICE. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       MODAL: PLAN YOUR SERVICE
+       ====================================================================== -->
+  <div class="modal-backdrop" id="service-planner-modal" role="dialog" aria-modal="true" aria-labelledby="planner-modal-title">
+    <div class="modal-window">
+      <div class="modal-head">
+        <h3 id="planner-modal-title">Plan Your RV Service</h3>
+        <button type="button" class="modal-close-btn" data-modal-close aria-label="Close modal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="service-planner-form">
+          <div class="form-group">
+            <label for="coach-type" class="form-label">RV / Motorhome Type</label>
+            <select id="coach-type" class="form-select" required>
+              <option value="">Select coach type...</option>
+              <option value="class-a">Class A Motorhome (Diesel / Gas)</option>
+              <option value="class-b">Class B / Camper Van</option>
+              <option value="class-c">Class C Motorhome</option>
+              <option value="fifth-wheel">Fifth Wheel Trailer</option>
+              <option value="travel-trailer">Travel Trailer</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-category" class="form-label">Primary Service Required</label>
+            <select id="service-category" class="form-select" required>
+              <option value="">Select service...</option>
+              <option value="pre-trip">Pre-Trip Safety &amp; System Staging</option>
+              <option value="engine-routine">Chassis &amp; Powertrain Care</option>
+              <option value="winterization">Seasonal Winterization / De-Winterization</option>
+              <option value="electrical-plumbing">Electrical Banks &amp; Plumbing Leak Test</option>
+              <option value="roof-seals">Roof Dicor Lap Seal Inspection</option>
+              <option value="hvac-appliances">A/C, Furnace &amp; Refrigerator Service</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-timeline" class="form-label">Preferred Timeframe</label>
+            <select id="preferred-timeline" class="form-select" required>
+              <option value="immediate">Immediate / Departure within 48h</option>
+              <option value="next-week">Next Week</option>
+              <option value="seasonal">Seasonal Storage / Winter Prep</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="service-notes" class="form-label">Notes on Vehicle Symptoms or Needs</label>
+            <textarea id="service-notes" class="form-textarea" placeholder="e.g. A/C cooling delta low, roof inspection before mountain trip..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+            <span>SUBMIT SERVICE REQUEST</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Master JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

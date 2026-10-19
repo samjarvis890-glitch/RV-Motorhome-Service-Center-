@@ -41,6 +41,7 @@
         <a href="../index.html" class="sidebar-brand-link" aria-label="RoadReady RV Service Homepage">
           <img src="../assets/images/brand/roadready-logo-dark.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-light-theme" width="170" height="32">
           <img src="../assets/images/brand/roadready-logo-light.svg" alt="RoadReady RV Service" class="sidebar-brand-logo logo-dark-theme" width="170" height="32">
+          <span class="sidebar-portal-tag">OWNER PORTAL</span>
         </a>
         <button type="button" class="sidebar-close-btn" aria-label="Close navigation sidebar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -301,13 +302,7 @@
 
           <!-- RTL / LTR Direction Toggle -->
           <button type="button" class="topbar-btn rtl-toggle-btn" aria-label="Toggle Text Direction (RTL / LTR)" title="Toggle RTL / LTR">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 3 21 3 21 8"></polyline>
-              <line x1="4" y1="20" x2="21" y2="3"></line>
-              <polyline points="21 16 21 21 16 21"></polyline>
-              <line x1="15" y1="15" x2="21" y2="21"></line>
-              <line x1="4" y1="4" x2="9" y2="9"></line>
-            </svg>
+            <span class="rtl-label-text">RTL</span>
           </button>
 
           <!-- Notifications Dropdown Wrapper -->
@@ -359,7 +354,7 @@
             <div class="profile-dropdown-menu" role="menu">
               <div class="profile-menu-header">
                 <div class="profile-menu-user">RV OWNER</div>
-                <div class="profile-menu-role">RoadReady Certified Portal</div>
+                <div class="profile-menu-role">RoadReady RV Service Owner</div>
               </div>
               <a href="profile.html" class="profile-menu-item" role="menuitem">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -480,8 +475,8 @@
                 </div>
               </div>
 
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 14px; border-top: 1px solid var(--color-border-subtle);">
-                <div style="display: flex; gap: 10px;">
+              <div class="apt-action-bar">
+                <div class="apt-action-btns">
                   <button type="button" class="btn btn-secondary" onclick="showDashboardToast('Opening reschedule options...')">Reschedule Bay</button>
                   <button type="button" class="btn btn-secondary" onclick="showDashboardToast('Cancellation request submitted to service desk.')">Cancel Slot</button>
                 </div>
@@ -503,29 +498,29 @@
 
               <div style="display: flex; flex-direction: column; gap: 14px;">
                 
-                <div style="padding: 16px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-                  <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 44px; height: 44px; border-radius: var(--border-radius-sm); background: var(--color-primary); color: #FFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;">
+                <div class="past-apt-row">
+                  <div class="past-apt-info-wrap">
+                    <div class="past-apt-date-badge">
                       <span>OCT</span>
-                      <span style="font-size: 1rem; line-height: 1;">14</span>
+                      <span>14</span>
                     </div>
                     <div>
-                      <h4 style="font-size: 0.92rem; font-weight: 700; margin: 0; color: var(--color-text-main);">Cummins Generator 100-Hr Service</h4>
-                      <div style="font-size: 0.78rem; color: var(--color-text-light);">Completed by Lead Tech #12 • Bay #4</div>
+                      <h4 class="past-apt-title">Cummins Generator 100-Hr Service</h4>
+                      <div class="past-apt-sub">Completed by Lead Tech #12 • Bay #4</div>
                     </div>
                   </div>
                   <a href="service-records.html" class="btn-table-action">View Work Order</a>
                 </div>
 
-                <div style="padding: 16px; background: var(--color-surface-secondary); border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-                  <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 44px; height: 44px; border-radius: var(--border-radius-sm); background: var(--color-primary); color: #FFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;">
+                <div class="past-apt-row">
+                  <div class="past-apt-info-wrap">
+                    <div class="past-apt-date-badge">
                       <span>AUG</span>
-                      <span style="font-size: 1rem; line-height: 1;">28</span>
+                      <span>28</span>
                     </div>
                     <div>
-                      <h4 style="font-size: 0.92rem; font-weight: 700; margin: 0; color: var(--color-text-main);">Rooftop Dicor Lap Seal Audit</h4>
-                      <div style="font-size: 0.78rem; color: var(--color-text-light);">Completed by Roof Specialist #08 • Bay #2</div>
+                      <h4 class="past-apt-title">Rooftop Dicor Lap Seal Audit</h4>
+                      <div class="past-apt-sub">Completed by Roof Specialist #08 • Bay #2</div>
                     </div>
                   </div>
                   <a href="service-records.html" class="btn-table-action">View Work Order</a>

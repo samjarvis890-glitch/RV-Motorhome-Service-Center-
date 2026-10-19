@@ -90,9 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
     rtlToggles.forEach(btn => {
       const labelText = btn.querySelector('.rtl-label-text');
       if (labelText) {
-        labelText.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+        if (btn.classList.contains('drawer-control-item')) {
+          labelText.textContent = dir === 'rtl' ? 'LTR Mode' : 'RTL Mode';
+        } else {
+          labelText.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+        }
+      } else if (!btn.querySelector('svg')) {
+        btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
       }
       btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left to Right' : 'Switch to Right to Left');
+      btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
     });
   };
 
@@ -523,35 +530,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const journalTopicItems = document.querySelectorAll('.journal-topic-item');
   const practicalNoteRows = document.querySelectorAll('.practical-note-row');
 
-  function filterBlogCategory(category, label) {
+  function filterBlogCategory(category, label, shouldScroll = true) {
     if (!practicalNoteRows.length) return;
 
+    let matchCount = 0;
     practicalNoteRows.forEach(row => {
       const rowCat = row.getAttribute('data-category');
       if (category === 'all' || rowCat === category) {
         row.style.display = 'grid';
+        matchCount++;
       } else {
         row.style.display = 'none';
       }
     });
 
     journalFilterBtns.forEach(btn => {
-      if (btn.getAttribute('data-filter') === category) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
+      const isTarget = btn.getAttribute('data-filter') === category;
+      btn.classList.toggle('active', isTarget);
+      btn.setAttribute('aria-selected', isTarget ? 'true' : 'false');
     });
 
-    showToast(`Showing Topics: ${label || 'All Topics'}`);
+    journalTopicItems.forEach(item => {
+      const isTarget = item.getAttribute('data-topic-filter') === category;
+      item.classList.toggle('active', isTarget);
+    });
+
+    if (shouldScroll) {
+      const practicalSection = document.getElementById('practical-notes-section');
+      if (practicalSection) {
+        const headerHeight = document.querySelector('.site-header')?.offsetHeight || 72;
+        const targetTop = practicalSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+        window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      }
+    }
+
+    showToast(`Showing: ${label || 'All Topics'} (${matchCount} ${matchCount === 1 ? 'article' : 'articles'})`);
   }
 
   if (journalFilterBtns.length > 0) {
     journalFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         const filterKey = btn.getAttribute('data-filter');
         const filterLabel = btn.textContent.trim();
-        filterBlogCategory(filterKey, filterLabel);
+        filterBlogCategory(filterKey, filterLabel, true);
       });
     });
   }
@@ -562,13 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const topicKey = item.getAttribute('data-topic-filter');
         const topicTitle = item.querySelector('.journal-topic-title') ? item.querySelector('.journal-topic-title').textContent.trim() : topicKey;
         
-        filterBlogCategory(topicKey, topicTitle);
-
-        // Smoothly scroll to Section 4
-        const practicalSection = document.getElementById('practical-notes-section');
-        if (practicalSection) {
-          practicalSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        filterBlogCategory(topicKey, topicTitle, true);
       });
     });
   }
@@ -636,6 +652,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Check patio awnings for secure locking, inspect rooftop vent lids, ensure storage bay latches are fully clicked, and verify shore cords, water hoses, and sewer connections are stored.</p>
         <h4 style="margin-top: 1.25rem; font-size: 1rem; color: var(--color-text-main);">Tow Connection &amp; Lighting Verification</h4>
         <p>Confirm 7-pin electrical plug connectivity, test brake lamps and turn indicators, verify hitch locking pins and emergency breakaway cable attachments.</p>
+      `
+    },
+    'article-maintenance': {
+      title: 'CHASSIS & POWERTRAIN ROUTINE PROTOCOLS',
+      tag: 'CHASSIS MAINTENANCE • ROADREADY TECHNICAL NOTE',
+      content: `
+        <p>Heavy motorcoach chassis endure substantial vibration, thermal cycling, and weight shifts across thousands of highway miles. Regular chassis maintenance preserves running gear longevity and ride stability.</p>
+        <h4 style="margin-top: 1.25rem; font-size: 1rem; color: var(--color-text-main);">1. Fluid &amp; Filter Analysis</h4>
+        <p>Analyze transmission fluid clarity, differential gear oil viscosity, and engine coolant SCA chemistry to prevent catastrophic overheating under uphill load.</p>
+        <h4 style="margin-top: 1.25rem; font-size: 1rem; color: var(--color-text-main);">2. Generator Exercise &amp; Spark Assessment</h4>
+        <p>Onan and Cummins commercial diesel/gas generators require monthly loaded runs to evaporate moisture from windings and clear carburetor varnish.</p>
+      `
+    },
+    'article-hvac': {
+      title: 'BALANCING CABIN CLIMATE & FURNACE EFFICIENCY',
+      tag: 'HVAC & APPLIANCES • HABITATION PROTOCOL',
+      content: `
+        <p>Rooftop heat pumps, direct-expansion air conditioners, and LP furnaces must maintain proper airflow and thermostat calibration to preserve interior comfort in extreme weather.</p>
+        <h4 style="margin-top: 1.25rem; font-size: 1rem; color: var(--color-text-main);">1. Condenser Coil &amp; Fin Cleaning</h4>
+        <p>Road grime and cottonwood seeds accumulate rapidly in rooftop condenser coils, degrading thermal heat rejection by up to 35% and causing high-pressure compressor cutouts.</p>
+        <h4 style="margin-top: 1.25rem; font-size: 1rem; color: var(--color-text-main);">2. Sail Switch &amp; Furnace Burner Inspection</h4>
+        <p>Inspect the furnace blower airflow sail switch and burner ignition tube for soot accumulation, ensuring immediate, reliable heating during cold nights.</p>
       `
     }
   };

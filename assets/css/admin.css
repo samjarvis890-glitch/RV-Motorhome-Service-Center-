@@ -472,6 +472,21 @@
   color: var(--color-accent);
 }
 
+.admin-topbar-btn.rtl-toggle-btn {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: 1;
+}
+
+.admin-topbar-btn.rtl-toggle-btn .rtl-label-text {
+  display: inline-block;
+  line-height: 1;
+}
+
 .admin-notif-badge {
   position: absolute;
   top: 9px;

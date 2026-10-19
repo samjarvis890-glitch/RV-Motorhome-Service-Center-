@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   border-bottom: 1px solid var(--color-border);
   flex-shrink: 0;
 }
@@ -76,12 +76,12 @@
 .sidebar-brand-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
 }
 
 .sidebar-brand-logo {
-  height: 38px;
+  height: 30px;
   width: auto;
   display: block;
 }
@@ -107,7 +107,8 @@
 }
 
 .sidebar-portal-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
@@ -118,6 +119,7 @@
   padding: 3px 8px;
   border-radius: var(--border-radius-pill);
   border: 1px solid rgba(224, 154, 62, 0.3);
+  white-space: nowrap;
 }
 
 /* Sidebar Navigation */
@@ -492,6 +494,21 @@
   background-color: var(--color-surface-secondary);
   border-color: var(--color-accent);
   color: var(--color-accent);
+}
+
+.topbar-btn.rtl-toggle-btn {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  line-height: 1;
+}
+
+.topbar-btn.rtl-toggle-btn .rtl-label-text {
+  display: inline-block;
+  line-height: 1;
 }
 
 .topbar-notification-badge {
@@ -2225,6 +2242,15 @@
   border-top: 1px solid var(--color-border);
 }
 
+.fleet-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
 .rv-fleet-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -2557,6 +2583,78 @@
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-text-main);
+  word-break: break-word;
+}
+
+.apt-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.apt-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.past-apt-row {
+  padding: 16px;
+  background: var(--color-surface-secondary);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.past-apt-info-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.past-apt-date-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-sm);
+  background: var(--color-primary);
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.past-apt-date-badge span:last-child {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.past-apt-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text-main);
+  word-break: break-word;
+}
+
+.past-apt-sub {
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  word-break: break-word;
 }
 
 /* Calendar Widget */
@@ -3634,6 +3732,8 @@
     font-size: 0.72rem;
   }
 
+  .dashboard-page-header .header-actions-group,
+  .dashboard-page-header > div:last-child,
   .header-actions-group {
     width: 100%;
     display: flex;
@@ -3641,6 +3741,12 @@
     gap: 10px;
   }
 
+  .dashboard-page-header .header-actions-group .btn,
+  .dashboard-page-header .header-actions-group button,
+  .dashboard-page-header .header-actions-group a,
+  .dashboard-page-header > div:last-child .btn,
+  .dashboard-page-header > div:last-child button,
+  .dashboard-page-header > div:last-child a,
   .header-actions-group .btn,
   .header-actions-group button,
   .header-actions-group a {
@@ -3942,17 +4048,427 @@
   }
 
   /* Header Actions & Breadcrumbs on Mobile */
+  .dashboard-page-header .header-actions-group,
+  .dashboard-page-header > div:last-child,
   .header-actions-group {
-    flex-direction: column;
-    width: 100%;
-    gap: 8px;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
   }
 
+  .dashboard-page-header .header-actions-group .btn,
+  .dashboard-page-header .header-actions-group button,
+  .dashboard-page-header .header-actions-group a,
+  .dashboard-page-header > div:last-child .btn,
+  .dashboard-page-header > div:last-child button,
+  .dashboard-page-header > div:last-child a,
+  .dashboard-page-header > .btn,
   .header-actions-group .btn,
   .header-actions-group button,
   .header-actions-group a {
-    width: 100%;
-    justify-content: center;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 42px !important;
+    flex: none !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     A. MY RV SECTION (dashboard/my-rv.html & Overview)
+     -------------------------------------------------------------------------- */
+  .rv-hero-card {
+    border-radius: var(--border-radius-lg) !important;
+    overflow: hidden;
+  }
+
+  .rv-hero-media {
+    min-height: 200px !important;
+    max-height: 250px !important;
+  }
+
+  .rv-hero-badge-overlay {
+    top: 10px !important;
+    left: 10px !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  [dir="rtl"] .rv-hero-badge-overlay {
+    left: auto !important;
+    right: 10px !important;
+  }
+
+  .rv-hero-content {
+    padding: 16px 14px !important;
+    gap: 16px !important;
+  }
+
+  .rv-hero-name {
+    font-size: 1.25rem !important;
+    word-break: break-word !important;
+  }
+
+  .rv-hero-specs-list {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .rv-hero-spec-item {
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .rv-hero-spec-item:last-child {
+    border-bottom: none;
+  }
+
+  .rv-hero-spec-lbl {
+    font-size: 0.65rem !important;
+  }
+
+  .rv-hero-spec-val {
+    font-size: 0.85rem !important;
+    word-break: break-word !important;
+  }
+
+  .rv-hero-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 8px !important;
+    padding-top: 14px !important;
+  }
+
+  .rv-hero-actions .btn,
+  .rv-hero-actions a,
+  .rv-hero-actions button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 42px !important;
+  }
+
+  .fleet-header-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .fleet-header-row .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    min-height: 40px !important;
+  }
+
+  .rv-fleet-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .rv-unit-card {
+    padding: 16px 14px !important;
+    gap: 14px !important;
+  }
+
+  .rv-unit-card .rv-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Overview Card (dashboard/index.html) */
+  .rv-overview-box {
+    padding: 14px 12px !important;
+    gap: 16px !important;
+  }
+
+  .rv-name-badge-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .rv-name {
+    font-size: 1.15rem !important;
+    word-break: break-word !important;
+  }
+
+  .rv-spec-item {
+    gap: 2px !important;
+  }
+
+  .rv-spec-label {
+    font-size: 0.66rem !important;
+  }
+
+  .rv-spec-value {
+    font-size: 0.85rem !important;
+    word-break: break-word !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     B. MY RV DETAILS SECTION (dashboard/rv-details.html)
+     -------------------------------------------------------------------------- */
+  .tech-spec-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .tech-system-card {
+    padding: 16px 14px !important;
+    gap: 14px !important;
+  }
+
+  .tech-system-head {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .tech-system-title-wrap {
+    min-width: 0 !important;
+  }
+
+  .tech-system-title {
+    font-size: 1rem !important;
+    word-break: break-word !important;
+  }
+
+  /* Stacked Spec Table on Small Screens (Prevents Columns Squishing) */
+  .tech-spec-table,
+  .tech-spec-table tbody,
+  .tech-spec-table tr,
+  .tech-spec-table td {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .tech-spec-table tr {
+    padding: 8px 0 !important;
+    border-bottom: 1px solid var(--color-border-subtle) !important;
+  }
+
+  .tech-spec-table tr:last-child {
+    border-bottom: none !important;
+  }
+
+  .tech-spec-table td {
+    padding: 2px 0 !important;
+    text-align: left !important;
+  }
+
+  [dir="rtl"] .tech-spec-table td {
+    text-align: right !important;
+  }
+
+  .tech-spec-table td:first-child {
+    font-size: 0.72rem !important;
+    color: var(--color-text-light) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    width: 100% !important;
+  }
+
+  .tech-spec-table td:last-child {
+    font-size: 0.88rem !important;
+    color: var(--color-text-main) !important;
+    font-weight: 600 !important;
+    word-break: break-word !important;
+    width: 100% !important;
+  }
+
+  .tech-subgrid-3col {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .tech-subgrid-3col > div {
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid var(--color-border-subtle) !important;
+  }
+
+  .tech-subgrid-3col > div:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* --------------------------------------------------------------------------
+     C. APPOINTMENTS SECTION (dashboard/appointments.html & Overview)
+     -------------------------------------------------------------------------- */
+  .appointment-slot-card {
+    padding: 16px 14px !important;
+    gap: 14px !important;
+  }
+
+  .appointment-slot-head {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .appointment-slot-head > div:first-child {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .appointment-slot-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .apt-detail-cell {
+    padding-bottom: 6px !important;
+    border-bottom: 1px solid var(--color-border-subtle) !important;
+  }
+
+  .apt-detail-cell:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .apt-detail-lbl {
+    font-size: 0.65rem !important;
+  }
+
+  .apt-detail-val {
+    font-size: 0.85rem !important;
+    word-break: break-word !important;
+  }
+
+  .apt-action-bar {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding-top: 12px !important;
+  }
+
+  .apt-action-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .apt-action-btns .btn,
+  .apt-action-bar .btn,
+  .apt-action-bar a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 42px !important;
+  }
+
+  .past-apt-row {
+    padding: 12px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .past-apt-info-wrap {
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 10px !important;
+  }
+
+  .past-apt-date-badge {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .past-apt-date-badge span:first-child {
+    font-size: 0.65rem !important;
+  }
+
+  .past-apt-date-badge span:last-child {
+    font-size: 0.9rem !important;
+  }
+
+  .past-apt-title {
+    font-size: 0.88rem !important;
+    word-break: break-word !important;
+  }
+
+  .past-apt-sub {
+    font-size: 0.75rem !important;
+    word-break: break-word !important;
+  }
+
+  .past-apt-row .btn-table-action {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 38px !important;
+  }
+
+  .calendar-widget-box {
+    padding: 14px 10px !important;
+    gap: 14px !important;
+  }
+
+  .calendar-month-head {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .calendar-grid-days {
+    gap: 3px !important;
+  }
+
+  .cal-day-cell {
+    height: 32px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .cal-day-label {
+    font-size: 0.65rem !important;
+    padding: 2px 0 !important;
+  }
+
+  /* Overview Next Appointment Card (dashboard/index.html) */
+  .appointment-card-body {
+    padding: 14px 12px !important;
+    gap: 14px !important;
+  }
+
+  .appointment-info-group {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .appointment-date-badge {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .apt-day {
+    font-size: 1.25rem !important;
+  }
+
+  .apt-service-title {
+    font-size: 0.96rem !important;
+    word-break: break-word !important;
+  }
+
+  .apt-meta-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .appointment-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+
+  .appointment-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    min-height: 40px !important;
   }
 
   /* User Chat Mobile Small Screen */
@@ -4011,18 +4527,114 @@
     width: 100%;
     justify-content: center;
   }
+
+  .dashboard-workspace > footer {
+    padding: 16px 14px !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   EXTRA SMALL MOBILE (< 360px)
+   EXTRA SMALL MOBILE (<= 360px)
+   Ultra-compact spacing, responsive typography, and anti-overflow protections
    -------------------------------------------------------------------------- */
 @media (max-width: 360px) {
+  .dashboard-main-content,
+  .dashboard-main {
+    padding: 8px !important;
+    gap: 12px !important;
+  }
+
+  .dashboard-card {
+    padding: 14px 10px !important;
+    border-radius: var(--border-radius-md) !important;
+  }
+
+  .card-header-row {
+    padding: 12px 10px !important;
+    gap: 8px !important;
+  }
+
+  .card-title {
+    font-size: 1.05rem !important;
+    word-break: break-word !important;
+  }
+
+  .card-subtitle {
+    font-size: 0.75rem !important;
+  }
+
+  .page-main-title,
+  .dashboard-page-title {
+    font-size: 1.3rem !important;
+    word-break: break-word !important;
+  }
+
+  .page-subtitle {
+    font-size: 0.78rem !important;
+  }
+
+  .rv-hero-content {
+    padding: 12px 10px !important;
+    gap: 12px !important;
+  }
+
+  .rv-hero-name {
+    font-size: 1.12rem !important;
+  }
+
+  .rv-unit-card {
+    padding: 12px 10px !important;
+  }
+
+  .tech-system-card {
+    padding: 12px 10px !important;
+    gap: 12px !important;
+  }
+
+  .tech-system-title {
+    font-size: 0.95rem !important;
+  }
+
+  .appointment-slot-card {
+    padding: 12px 10px !important;
+    gap: 12px !important;
+  }
+
+  .appointment-slot-grid {
+    padding: 10px 8px !important;
+  }
+
+  .past-apt-row {
+    padding: 10px 8px !important;
+  }
+
+  .calendar-widget-box {
+    padding: 12px 6px !important;
+  }
+
+  .calendar-grid-days {
+    gap: 2px !important;
+  }
+
+  .cal-day-cell {
+    height: 28px !important;
+    font-size: 0.7rem !important;
+  }
+
+  .rv-overview-box {
+    padding: 12px 8px !important;
+  }
+
+  .appointment-card-body {
+    padding: 12px 8px !important;
+  }
+
   .quick-actions-grid {
     grid-template-columns: 1fr !important;
   }
 
   .status-banner-title {
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
   }
 
   .dashboard-topbar,
@@ -4047,5 +4659,9 @@
   [dir="rtl"] .topbar-search-icon {
     right: 8px;
     left: auto;
+  }
+
+  .dashboard-workspace > footer {
+    padding: 12px 10px !important;
   }
 }

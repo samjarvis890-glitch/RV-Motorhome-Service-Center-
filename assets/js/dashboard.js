@@ -31,7 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize saved direction
   const savedDir = localStorage.getItem('roadready_dir') || 'ltr';
-  htmlElement.setAttribute('dir', savedDir);
+
+  const updateDirUI = (dir) => {
+    htmlElement.setAttribute('dir', dir);
+    localStorage.setItem('roadready_dir', dir);
+    rtlToggles.forEach(btn => {
+      const labelText = btn.querySelector('.rtl-label-text');
+      if (labelText) {
+        labelText.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+      }
+      btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left to Right' : 'Switch to Right to Left');
+      btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+    });
+  };
+
+  updateDirUI(savedDir);
 
   const updateThemeUI = (isDark) => {
     themeToggles.forEach(btn => {
@@ -66,8 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       const currentDir = htmlElement.getAttribute('dir') || 'ltr';
       const nextDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-      htmlElement.setAttribute('dir', nextDir);
-      localStorage.setItem('roadready_dir', nextDir);
+      updateDirUI(nextDir);
       showDashboardToast(`Layout Direction: ${nextDir.toUpperCase()}`);
     });
   });

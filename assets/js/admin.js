@@ -91,6 +91,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.setAttribute('dir', dir);
     document.documentElement.setAttribute('lang', dir === 'rtl' ? 'ar' : 'en');
     localStorage.setItem('roadready_dir', dir);
+    rtlToggleBtns.forEach(btn => {
+      const labelText = btn.querySelector('.rtl-label-text');
+      if (labelText) {
+        labelText.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+      }
+      btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to Left to Right' : 'Switch to Right to Left');
+      btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+    });
   }
 
   applyDirection(storedDir);
